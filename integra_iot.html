@@ -1,0 +1,1754 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Mangal;
+	panose-1:0 0 4 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:DengXian;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"DengXian Light";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:Aptos;}
+@font-face
+	{font-family:"Segoe UI Emoji";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:"\@DengXian";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"\@DengXian Light";}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:#467886;
+	text-decoration:underline;}
+p.Ttulo1ABNT, li.Ttulo1ABNT, div.Ttulo1ABNT
+	{mso-style-name:"Título 1 ABNT";
+	margin:0cm;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+p.Ttulo2ABNT, li.Ttulo2ABNT, div.Ttulo2ABNT
+	{mso-style-name:"Título 2 ABNT";
+	margin:0cm;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+p.TextoWeb, li.TextoWeb, div.TextoWeb
+	{mso-style-name:"Texto Web";
+	mso-style-link:"Texto Web Char";
+	margin:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+span.TextoWebChar
+	{mso-style-name:"Texto Web Char";
+	mso-style-link:"Texto Web";}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:63.8pt 42.45pt 42.55pt 2.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=PT-BR link="#467886" vlink="#96607D" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:115%'><b>Integração
+de Sensor com MQTT para Monitoramento por IoT</b></p>
+
+<p class=MsoNormal style='line-height:115%'><b>&nbsp;</b></p>
+
+<p class=MsoNormal style='line-height:115%'><b>SUMÁRIO</b></p>
+
+<p class=MsoNormal style='line-height:115%'><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoToc1><a
+href="#_Toc193146469"><span style='font-size:10.0pt'>1 Visão Geral da Solução</span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>.. </span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc193146470"><span style='font-size:10.0pt'>2
+Planejamento e Levantamento de Requisitos (Sistema Real)</span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'> </span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc193146471"><span style='font-size:10.0pt'>3
+Instalação e Configuração do Ambiente</span><span style='font-size:10.0pt;
+color:windowtext;display:none;text-decoration:none'>. </span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc193146472"><span style='font-size:10.0pt'>4
+Arquitetura da Solução</span><span style='font-size:10.0pt;color:windowtext;
+display:none;text-decoration:none'>.. </span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc193146473"><span style='font-size:10.0pt'>5
+Detalhamento Técnico</span><span style='font-size:10.0pt;color:windowtext;
+display:none;text-decoration:none'>.. </span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc193146474"><span style='font-size:10.0pt'>6
+SimulIDE e Arduino: Montando o Laboratório Virtual (Sistema Virtual)</span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'> </span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc193146475"><span style='font-size:10.0pt'>6.1
+Interface Serial Externa: Criando a Ponte para o Mundo Exterior</span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'> </span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc193146476"><span style='font-size:10.0pt'>7.
+Requisitos</span><span style='font-size:10.0pt;color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc193146477"><span style='font-size:10.0pt'>8.
+Configuração do SimulIDE e Arduino Simulado</span><span style='font-size:10.0pt;
+color:windowtext;display:none;text-decoration:none'>.. </span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc193146478"><span style='font-size:10.0pt'>8.1
+Adicionando o Arduino ao SimulIDE</span><span style='font-size:10.0pt;
+color:windowtext;display:none;text-decoration:none'>. </span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc193146479"><span style='font-size:10.0pt'>8.2
+Configurando o Módulo DHT22 no SimulIDE</span><span style='font-size:10.0pt;
+color:windowtext;display:none;text-decoration:none'>. </span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc193146480"><span style='font-size:10.0pt'>8.3
+Criando um Código para o DHT22 no Arduino IDE</span><span style='font-size:
+10.0pt;color:windowtext;display:none;text-decoration:none'>. </span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc193146481"><span style='font-size:10.0pt'>8.4
+Configurando a Porta Serial Virtual</span><span style='font-size:10.0pt;
+color:windowtext;display:none;text-decoration:none'> </span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>10</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc193146482"><span style='font-size:10.0pt'>9
+Configuração da Conexão com o Script Python</span><span style='font-size:10.0pt;
+color:windowtext;display:none;text-decoration:none'>. </span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>10</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc193146483"><span style='font-size:10.0pt'>10
+Instalando e Configurando o Proxmox no VirtualBox</span><span style='font-size:
+10.0pt;color:windowtext;display:none;text-decoration:none'>. </span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>11</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc193146484"><span style='font-size:10.0pt'>10.1
+Criando a Máquina Virtual no VirtualBox</span><span style='font-size:10.0pt;
+color:windowtext;display:none;text-decoration:none'>. </span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>11</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc193146485"><span style='font-size:10.0pt'>10.2
+Instalando o Mosquitto MQTT Broker</span><span style='font-size:10.0pt;
+color:windowtext;display:none;text-decoration:none'> </span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>11</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc193146486"><span style='font-size:10.0pt'>11.
+Testando a Comunicação</span><span style='font-size:10.0pt;color:windowtext;
+display:none;text-decoration:none'>.. </span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>11</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc193146487"><span style='font-size:10.0pt'>12
+Conclusão</span><span style='font-size:10.0pt;color:windowtext;display:none;
+text-decoration:none'>.. </span><span
+style='font-size:10.0pt;color:windowtext;display:none;text-decoration:none'>11</span></a></p>
+
+<p class=MsoNormal style='line-height:115%'><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></p>
+
+<p class=Ttulo1ABNT>&nbsp;</p>
+
+<p class=Ttulo1ABNT><a name="_Toc193146469">1 Visão Geral da Solução</a></p>
+
+<p class=MsoNormal style='line-height:115%'><b>&nbsp;</b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:115%'>A solução proposta consiste em implementar um sistema de
+monitoramento por meio do uso de um sensor <b>DHT22</b> para coletar dados de
+temperatura e umidade, que são enviados via <b>Arduino</b> para um servidor
+utilizando <b>comunicação serial</b>. Os dados na sequência são então
+processados e publicados em um <b>broker MQTT</b>, permitindo que outros
+dispositivos ou sistemas acessem as informações em tempo real.</p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:115%'><span style='font-size:10.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:115%'>Imagine que você quer construir um circuito eletrônico
+virtual, usando um programa de computador. O SimulIDE é como um laboratório
+virtual onde você pode fazer isso. Um dos componentes mais populares que você
+pode usar é o Arduino, um pequeno computador programável que é ótimo para
+controlar luzes, motores, sensores e muito mais.</p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:115%'><span style='font-size:10.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:115%'>Agora, imagine que você quer que seu Arduino virtual
+&quot;converse&quot; com outros programas no seu computador (como o Windows) ou
+até mesmo com outros computadores em uma rede. </p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:115%'><span style='font-size:10.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:115%'>A &quot;comunicação serial&quot; é uma maneira de fazer isso,
+como se fosse um cabo telefônico virtual conectando seu Arduino a outros
+dispositivos.</p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:115%'><span style='font-size:10.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:115%'>Este guia explica como configurar essa comunicação serial no
+SimulIDE para que seu Arduino virtual possa enviar e receber dados de outros
+programas e até mesmo da internet!</p>
+
+<p class=MsoNormal style='line-height:115%'><b><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></b></p>
+
+<p class=Ttulo1ABNT><a name="_Toc193146470">2 Planejamento e Levantamento de
+Requisitos (Sistema Real)</a></p>
+
+<p class=MsoNormal style='line-height:115%'><b><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='line-height:115%'><b>1. Requisitos de Hardware</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='line-height:115%'><b>Sensor DHT22</b> para medir
+     temperatura e umidade.</li>
+ <li class=MsoNormal style='line-height:115%'><b>Arduino</b> (ou outro
+     microcontrolador compatível) para processamento e envio dos dados.</li>
+ <li class=MsoNormal style='line-height:115%'><b>Módulo ESP-01 (opcional)</b>
+     para conectividade Wi-Fi caso a comunicação MQTT seja feita diretamente
+     pelo microcontrolador.</li>
+ <li class=MsoNormal style='line-height:115%'><b>Cabo USB</b> para comunicação
+     e alimentação do Arduino.</li>
+ <li class=MsoNormal style='line-height:115%'><b>Computador ou servidor</b>
+     para processar os dados e encaminhá-los ao broker MQTT.</li>
+</ul>
+
+<p class=MsoNormal style='line-height:115%'><b>&nbsp;</b></p>
+
+<p class=MsoNormal style='line-height:115%'><b>2. Requisitos de Software</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='line-height:115%'><b>Firmware do Arduino</b>: </li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='line-height:115%'>Biblioteca <b>DHT.h</b> para
+      leitura do sensor.</li>
+  <li class=MsoNormal style='line-height:115%'>Biblioteca <b>SoftwareSerial.h</b>
+      para comunicação serial adicional.</li>
+  <li class=MsoNormal style='line-height:115%'>Biblioteca <b>ArduinoJson.h</b>
+      para formatação dos dados em JSON.</li>
+ </ul>
+ <li class=MsoNormal style='line-height:115%'><b>Script Python</b>: </li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='line-height:115%'>Biblioteca <b>pyserial</b> para
+      leitura dos dados da porta serial.</li>
+  <li class=MsoNormal style='line-height:115%'>Biblioteca <b>paho-mqtt</b> para
+      publicação dos dados no broker MQTT.</li>
+  <li class=MsoNormal style='line-height:115%'>Biblioteca <b>json</b> para
+      manipulação dos dados.</li>
+ </ul>
+ <li class=MsoNormal style='line-height:115%'><b>Broker MQTT</b>: </li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='line-height:115%'>Pode ser hospedado localmente ou
+      em um servidor na nuvem.</li>
+  <li class=MsoNormal style='line-height:115%'>Configurado para escutar e
+      distribuir as mensagens publicadas.</li>
+ </ul>
+</ul>
+
+<p class=MsoNormal style='line-height:115%'><b><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='line-height:115%'><b>Planejamento da Implementação</b></p>
+
+<p class=MsoNormal style='line-height:115%'><b><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></b></p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='line-height:115%'><b>Definição dos Objetivos</b>:</li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='line-height:115%'>Capturar e transmitir dados de
+      temperatura e umidade.</li>
+  <li class=MsoNormal style='line-height:115%'>Garantir que os dados sejam
+      processados e armazenados corretamente.</li>
+  <li class=MsoNormal style='line-height:115%'>Disponibilizar os dados via MQTT
+      para integração com outros sistemas.</li>
+ </ul>
+ <li class=MsoNormal style='line-height:115%'><b>Aquisição e Configuração do
+     Hardware</b>:</li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='line-height:115%'>Obter os componentes
+      necessários.</li>
+  <li class=MsoNormal style='line-height:115%'>Montar o circuito com o Arduino
+      e o sensor DHT22.</li>
+ </ul>
+ <li class=MsoNormal style='line-height:115%'><b>Desenvolvimento do Código</b>:</li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='line-height:115%'>Programar o Arduino para
+      capturar dados e enviá-los via SoftwareSerial.</li>
+  <li class=MsoNormal style='line-height:115%'>Criar o script Python para
+      interpretar os dados e publicá-los no broker MQTT.</li>
+ </ul>
+ <li class=MsoNormal style='line-height:115%'><b>Configuração do Ambiente</b>:</li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='line-height:115%'>Instalar as bibliotecas
+      necessárias no Arduino e no ambiente Python.</li>
+  <li class=MsoNormal style='line-height:115%'>Configurar o broker MQTT.</li>
+ </ul>
+ <li class=MsoNormal style='line-height:115%'><b>Testes e Validação</b>:</li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='line-height:115%'>Verificar a comunicação serial.</li>
+  <li class=MsoNormal style='line-height:115%'>Checar a formatação correta dos
+      dados JSON.</li>
+  <li class=MsoNormal style='line-height:115%'>Garantir que os dados são
+      publicados corretamente no MQTT e recebidos pelos clientes.</li>
+ </ul>
+</ol>
+
+<p class=MsoNormal style='line-height:115%'><b><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></b></p>
+
+<p class=Ttulo1ABNT><a name="_Toc193146471">3 Instalação e Configuração do
+Ambiente</a></p>
+
+<p class=MsoNormal style='line-height:115%'><b><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='line-height:115%'><b>1. Montagem do Circuito</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='line-height:115%'>Conectar o sensor DHT22 ao
+     Arduino seguindo o esquema: </li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='line-height:115%'><b>VCC</b> &#8594; 5V</li>
+  <li class=MsoNormal style='line-height:115%'><b>GND</b> &#8594; GND</li>
+  <li class=MsoNormal style='line-height:115%'><b>DATA</b> &#8594; Pino digital
+      6</li>
+ </ul>
+ <li class=MsoNormal style='line-height:115%'>Conectar a comunicação serial via
+     <b>SoftwareSerial</b>: </li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='line-height:115%'><b>RX</b> do módulo ESP-01 ou
+      outro dispositivo &#8594; Pino 4 do Arduino</li>
+  <li class=MsoNormal style='line-height:115%'><b>TX</b> do módulo ESP-01 ou
+      outro dispositivo &#8594; Pino 5 do Arduino</li>
+ </ul>
+</ul>
+
+<p class=MsoNormal style='line-height:115%'><b><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='line-height:115%'><b>2. Configuração do Arduino</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='line-height:115%'>Instalar a IDE do Arduino e
+     adicionar as bibliotecas <b>DHT.h</b>, <b>SoftwareSerial.h</b> e <b>ArduinoJson.h</b>.</li>
+ <li class=MsoNormal style='line-height:115%'>Carregar o código para leitura do
+     sensor e envio dos dados pela serial.</li>
+ <li class=MsoNormal style='line-height:115%'>Testar a comunicação utilizando o
+     monitor serial da IDE.</li>
+</ul>
+
+<p class=MsoNormal style='line-height:115%'><b><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='line-height:115%'><b>3. Configuração do
+Computador/Servidor</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='line-height:115%'>Instalar Python e as bibliotecas
+     necessárias: </li>
+ <li class=MsoNormal style='line-height:115%'><span lang=EN-US>pip install
+     pyserial paho-mqtt json</span></li>
+ <li class=MsoNormal style='line-height:115%'>Configurar o broker MQTT: </li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='line-height:115%'>Instalar o Mosquitto (broker
+      MQTT) no servidor ou usar um serviço na nuvem.</li>
+  <li class=MsoNormal style='line-height:115%'>Definir o tópico MQTT para
+      publicação dos dados.</li>
+ </ul>
+ <li class=MsoNormal style='line-height:115%'>Criar e executar o script Python
+     para receber os dados da porta serial e publicá-los no MQTT.</li>
+</ul>
+
+<p class=MsoNormal style='line-height:115%'><b><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='line-height:115%'><b>4. Testes e Validação</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='line-height:115%'>Testar a comunicação serial para
+     garantir que o Arduino envia os dados corretamente.</li>
+ <li class=MsoNormal style='line-height:115%'>Checar a conversão dos dados para
+     JSON.</li>
+ <li class=MsoNormal style='line-height:115%'>Monitorar o tráfego no broker
+     MQTT para confirmar a publicação e assinatura dos tópicos.</li>
+</ul>
+
+<p class=MsoNormal style='line-height:115%'><b><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></b></p>
+
+<p class=Ttulo1ABNT><a name="_Toc193146472">4 Arquitetura da Solução</a></p>
+
+<p class=MsoNormal style='line-height:115%'><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:115%'>A comunicação entre os componentes
+segue o seguinte fluxo:</p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='line-height:115%'><b>Coleta de Dados:</b> O sensor <b>DHT22</b>,
+     conectado ao <b>Arduino</b>, realiza leituras periódicas de temperatura e
+     umidade.</li>
+ <li class=MsoNormal style='line-height:115%'><b>Transmissão via
+     SoftwareSerial:</b> Os dados são formatados em <b>JSON</b> e enviados para
+     a porta serial utilizando a biblioteca <b>SoftwareSerial</b>.</li>
+ <li class=MsoNormal style='line-height:115%'><b>Recepção dos Dados no
+     Computador:</b> Um script <b>Python</b> lê os dados da porta serial e os
+     interpreta como objetos JSON.</li>
+ <li class=MsoNormal style='line-height:115%'><b>Publicação no Broker MQTT:</b>
+     O script <b>Python</b> publica as leituras recebidas no tópico MQTT <b>sensor/dht22</b>.</li>
+ <li class=MsoNormal style='line-height:115%'><b>Disponibilização dos Dados:</b>
+     Qualquer cliente MQTT pode assinar o tópico e receber as informações em
+     tempo real.</li>
+</ol>
+
+<p class=MsoNormal style='line-height:115%'><b><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></b></p>
+
+<p class=Ttulo1ABNT><a name="_Toc193146473">5 Detalhamento Técnico</a></p>
+
+<p class=MsoNormal style='line-height:115%'><b><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='line-height:115%'><b>1. Código no Arduino</b></p>
+
+<p class=MsoNormal style='line-height:115%'>O microcontrolador é responsável
+por:</p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='line-height:115%'>Inicializar a comunicação serial.</li>
+ <li class=MsoNormal style='line-height:115%'>Realizar leituras do sensor DHT22
+     a cada 5 segundos.</li>
+ <li class=MsoNormal style='line-height:115%'>Formatar os dados em JSON.</li>
+ <li class=MsoNormal style='line-height:115%'>Enviar as leituras pela <b>porta
+     COM3</b> (via SoftwareSerial).</li>
+</ul>
+
+<p class=MsoNormal style='line-height:115%'><b><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='line-height:115%'><b>2. Código em Python</b></p>
+
+<p class=MsoNormal style='line-height:115%'>O script executado no computador:</p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='line-height:115%'>Estabelece comunicação com a <b>porta
+     COM4</b> (onde o Arduino envia os dados).</li>
+ <li class=MsoNormal style='line-height:115%'>Lê os dados da serial e converte
+     para JSON.</li>
+ <li class=MsoNormal style='line-height:115%'>Publica os valores de temperatura
+     e umidade no <b>broker MQTT</b>.</li>
+ <li class=MsoNormal style='line-height:115%'>Garante que os dados possam ser
+     acessados por outros dispositivos conectados à rede.</li>
+</ul>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='line-height:115%'><b>Benefícios da Abordagem</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='line-height:115%'><b>Modularidade</b>: O uso de
+     MQTT permite que diferentes aplicações acessem os dados sem necessidade de
+     modificações no código-fonte do sensor.</li>
+ <li class=MsoNormal style='line-height:115%'><b>Escalabilidade</b>: A
+     arquitetura permite adicionar novos sensores sem impactar a estrutura
+     existente.</li>
+</ul>
+
+<p class=MsoNormal style='margin-left:35.7pt;text-indent:-17.85pt;line-height:
+115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Baixa latência</b>: A comunicação via MQTT garante a entrega
+rápida dos dados para os clientes assinantes.</p>
+
+<p class=MsoNormal style='margin-left:35.7pt;text-indent:-17.85pt;line-height:
+115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Facilidade de integração</b>: Qualquer sistema compatível com
+MQTT pode consumir os dados (ex.: servidores no <b>Proxmox</b> ou dashboards de
+monitoramento).</p>
+
+<p class=MsoNormal style='line-height:115%'><b><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='line-height:115%'><b>Aplicações Práticas</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='line-height:115%'>Monitoramento ambiental para <b>automação
+     residencial</b>.</li>
+ <li class=MsoNormal style='line-height:115%'>Controle de <b>ambientes
+     industriais</b>.</li>
+ <li class=MsoNormal style='line-height:115%'><b>Agricultura de precisão</b>,
+     coletando dados climáticos em tempo real.</li>
+ <li class=MsoNormal style='line-height:115%'><b>Sistemas de alerta</b> para
+     variações de temperatura e umidade.</li>
+</ul>
+
+<p class=MsoNormal style='line-height:115%'><b><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='line-height:115%'>&nbsp;</p>
+
+<p class=Ttulo1ABNT><a name="_Toc193146474">6 SimulIDE e Arduino: Montando o
+Laboratório Virtual (Sistema Virtual)</a></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:115%'><span style='font-size:10.0pt;line-height:115%'>&nbsp;</span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+     line-height:115%'><b>Adicionando o Arduino:</b> No SimulIDE, você precisa
+     adicionar um Arduino ao seu painel de simulação (a área quadriculada onde
+     você monta seus circuitos). É como pegar um Arduino real e colocá-lo na
+     sua bancada de trabalho.</li>
+ <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+     line-height:115%'><b>Pinagem Serial (TX/RX):</b> O Arduino tem pinos
+     (conectores) que podem ser usados para comunicação serial. Este guia usa
+     os pinos 4 (TX - Transmitir) e 5 (RX - Receber). TX envia dados para fora
+     do Arduino, e RX recebe dados de outros dispositivos.</li>
+ <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+     line-height:115%'><b>Monitor Serial:</b> Ao clicar com o botão direito no
+     Arduino no SimulIDE, você verá uma opção para abrir o &quot;Monitor
+     Serial&quot;. Isso é como uma janela de bate-papo onde você pode ver os
+     dados que o Arduino está enviando e enviar comandos para ele.</li>
+</ul>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:115%'><b><span style='font-size:10.0pt;line-height:115%'>&nbsp;</span></b></p>
+
+<p class=Ttulo2ABNT><a name="_Toc193146475">6.1 Interface Serial Externa:
+Criando a Ponte para o Mundo Exterior</a></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:115%'><span style='font-size:10.0pt;line-height:115%'>&nbsp;</span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+     line-height:115%'><b>O que é a Interface Serial Externa?</b> Para que o
+     SimulIDE se comunique com o Windows (ou outros programas), você precisa de
+     um &quot;adaptador&quot; virtual. A Interface Serial Externa no SimulIDE
+     faz esse papel.</li>
+ <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+     line-height:115%'><b>Porta Serial Virtual:</b> Essa interface tem um campo
+     onde você define o nome de uma porta serial virtual. Pense nisso como um
+     número de telefone virtual que o SimulIDE usará para se conectar ao
+     Windows.</li>
+ <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+     line-height:115%'><b>Botão &quot;Open/Close&quot;:</b> Essa interface tem
+     um botão &quot;Open&quot;. Quando você clica nele, ele muda para
+     &quot;Close&quot;, indicando que a comunicação foi iniciada.</li>
+ <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+     line-height:115%'><b>com0com: O Segredo da Conexão:</b> Para que tudo isso
+     funcione, você precisa de um programa chamado &quot;com0com&quot;. Ele
+     cria portas seriais virtuais no Windows. É como instalar os cabos
+     telefônicos virtuais necessários para a comunicação.</li>
+</ul>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:115%'><b><span style='font-size:10.0pt;line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:115%'><b>6.2 Configurando as Portas Seriais Virtuais: Definindo os
+Números de Telefone</b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:115%'><span style='font-size:10.0pt;line-height:115%'>&nbsp;</span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+     line-height:115%'><b>Criando Portas Virtuais:</b> O documento sugere criar
+     duas portas seriais virtuais usando o com0com: </li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+      line-height:115%'><b>COM3:</b> Essa porta será usada pelo SimulIDE para
+      se comunicar com o Arduino virtual.</li>
+  <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+      line-height:115%'><b>COM4:</b> Essa porta será usada por outros programas
+      no Windows (como o NetCat ou Putty) para se comunicar com o Arduino
+      virtual.</li>
+ </ul>
+ <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+     line-height:115%'><b>Arduino IDE:</b> No Arduino IDE (o programa que você
+     usa para escrever código para o Arduino), você precisa selecionar a porta
+     COM3 para enviar o código para o Arduino no SimulIDE.</li>
+ <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+     line-height:115%'><b>Diretório do Arduino IDE:</b> O SimulIDE precisa
+     saber onde o Arduino IDE está instalado no seu computador. Isso permite
+     que o SimulIDE use o compilador do Arduino IDE para transformar seu código
+     em algo que o Arduino virtual possa entender.</li>
+</ul>
+
+<p class=MsoNormal style='line-height:115%'><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:115%'><b>6.3 Código em Python</b></p>
+
+<p class=MsoNormal style='line-height:115%'>O script executado no computador:</p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='line-height:115%'>Estabelece comunicação com a <b>porta
+     COM4</b> (onde o Arduino envia os dados).</li>
+ <li class=MsoNormal style='line-height:115%'>Lê os dados da serial e converte
+     para JSON.</li>
+ <li class=MsoNormal style='line-height:115%'>Publica os valores de temperatura
+     e umidade no <b>broker MQTT</b>.</li>
+ <li class=MsoNormal style='line-height:115%'>Garante que os dados possam ser
+     acessados por outros dispositivos conectados à rede.</li>
+</ul>
+
+<div class=TextoWeb align=center style='text-align:center;line-height:115%'>
+
+<hr size=2 width="100%" noshade style='color:black' align=center>
+
+</div>
+
+<p class=Ttulo1ABNT><a name="_Toc193146476">7. Requisitos</a></p>
+
+<p class=TextoWeb style='line-height:115%'>Antes de começarmos, certifique-se
+de ter os seguintes softwares instalados:</p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>SimulIDE</b>&nbsp;(Ambiente de simulação para eletrônica e
+microcontroladores)</p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Arduino IDE</b>&nbsp;(Para compilar e carregar código para o
+Arduino simulado)</p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:42.3pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=604 valign=top style='width:453.35pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+  line-height:115%'>Roteiro para Instalação e Configuração do Ambiente Arduino
+  IDE e SimulIDE</span></b></p>
+  <p class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+  line-height:115%'>1. Preparação do Ambiente</span></b></p>
+  <ul style='margin-top:0cm' type=disc>
+   <li class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+       line-height:115%'>Verifique os requisitos do sistema:</span></b><span
+       style='font-size:11.0pt;line-height:115%'> Certifique-se de que seu
+       sistema atenda aos requisitos mínimos para rodar o SimulIDE e o Arduino
+       IDE.</span></li>
+  </ul>
+  <p class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+  line-height:115%'>2. Instalação do Arduino IDE</span></b></p>
+  <ul style='margin-top:0cm' type=disc>
+   <li class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+       line-height:115%'>Baixe o Arduino IDE:</span></b></li>
+   <li class=MsoNormal style='line-height:115%'><span style='font-size:11.0pt;
+       line-height:115%'>Acesse o </span><a
+       href="https://www.arduino.cc/en/software"><span style='font-size:11.0pt;
+       line-height:115%'>site oficial do Arduino</span></a><span
+       style='font-size:11.0pt;line-height:115%'>.</span></li>
+   <li class=MsoNormal style='line-height:115%'><span style='font-size:11.0pt;
+       line-height:115%'>Escolha a versão adequada para o seu sistema
+       operacional (Windows, macOS ou Linux).</span></li>
+   <li class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+       line-height:115%'>Instale o Arduino IDE:</span></b></li>
+   <li class=MsoNormal style='line-height:115%'><span style='font-size:11.0pt;
+       line-height:115%'>Execute o instalador baixado e siga as instruções na
+       tela.</span></li>
+   <li class=MsoNormal style='line-height:115%'><span style='font-size:11.0pt;
+       line-height:115%'>Após a instalação, abra o Arduino IDE.</span></li>
+  </ul>
+  <p class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+  line-height:115%'>3. Instalação do SimulIDE</span></b></p>
+  <ul style='margin-top:0cm' type=disc>
+   <li class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+       line-height:115%'>Baixe o SimulIDE:</span></b></li>
+   <li class=MsoNormal style='line-height:115%'><span style='font-size:11.0pt;
+       line-height:115%'>Acesse o </span><a
+       href="https://simulide.blogspot.com/"><span style='font-size:11.0pt;
+       line-height:115%'>site do SimulIDE</span></a><span style='font-size:
+       11.0pt;line-height:115%'>.</span></li>
+   <li class=MsoNormal style='line-height:115%'><span style='font-size:11.0pt;
+       line-height:115%'>Faça o download da versão mais recente para seu
+       sistema operacional.</span></li>
+   <li class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+       line-height:115%'>Instale o SimulIDE:</span></b></li>
+   <li class=MsoNormal style='line-height:115%'><span style='font-size:11.0pt;
+       line-height:115%'>Para Windows, extraia o arquivo ZIP e execute o
+       SimulIDE.exe.</span></li>
+   <li class=MsoNormal style='line-height:115%'><span style='font-size:11.0pt;
+       line-height:115%'>Para Linux, faça o download do pacote e siga as
+       instruções de instalação específicas da distribuição.</span></li>
+  </ul>
+  <p class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+  line-height:115%'>4. Configuração do SimulIDE</span></b></p>
+  <ul style='margin-top:0cm' type=disc>
+   <li class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+       line-height:115%'>Abra o SimulIDE:</span></b></li>
+   <li class=MsoNormal style='line-height:115%'><span style='font-size:11.0pt;
+       line-height:115%'>Ao abrir, você verá a interface principal.</span></li>
+   <li class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+       line-height:115%'>Adicione o Arduino ao SimulIDE:</span></b></li>
+   <li class=MsoNormal style='line-height:115%'><span style='font-size:11.0pt;
+       line-height:115%'>Arraste o módulo Arduino da biblioteca de componentes
+       para o painel de simulação.</span></li>
+   <li class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+       line-height:115%'>Configure as portas de comunicação:</span></b></li>
+   <li class=MsoNormal style='line-height:115%'><span style='font-size:11.0pt;
+       line-height:115%'>Se necessário, configure os pinos TX (4) e RX (5) para
+       comunicação serial.</span></li>
+  </ul>
+  <p class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+  line-height:115%'>5. Configuração do Arduino Simulado</span></b></p>
+  <ul style='margin-top:0cm' type=disc>
+   <li class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+       line-height:115%'>Adicione um Sensor (ex: DHT22):</span></b></li>
+   <li class=MsoNormal style='line-height:115%'><span style='font-size:11.0pt;
+       line-height:115%'>Localize o sensor DHT22 na biblioteca de componentes
+       do SimulIDE e arraste-o para a simulação.</span></li>
+   <li class=MsoNormal style='line-height:115%'><span style='font-size:11.0pt;
+       line-height:115%'>Conecte os pinos VCC, GND e DATA conforme descrito no
+       guia.</span></li>
+   <li class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+       line-height:115%'>Monte o circuito:</span></b></li>
+   <li class=MsoNormal style='line-height:115%'><span style='font-size:11.0pt;
+       line-height:115%'>Certifique-se de que todas as conexões estão corretas.</span></li>
+  </ul>
+  <p class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+  line-height:115%'>6. Criando o Código no Arduino IDE</span></b></p>
+  <ul style='margin-top:0cm' type=disc>
+   <li class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+       line-height:115%'>Escreva o código para o Arduino:</span></b></li>
+   <li class=MsoNormal style='line-height:115%'><span style='font-size:11.0pt;
+       line-height:115%'>Utilize a biblioteca DHT para implementar a leitura do
+       sensor.</span></li>
+   <li class=MsoNormal style='line-height:115%'><span style='font-size:11.0pt;
+       line-height:115%'>Um exemplo básico de código já foi mencionado no guia.</span></li>
+  </ul>
+  <p class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+  line-height:115%'>7. Testando a Simulação</span></b></p>
+  <ul style='margin-top:0cm' type=disc>
+   <li class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+       line-height:115%'>Compile e execute o código:</span></b></li>
+   <li class=MsoNormal style='line-height:115%'><span style='font-size:11.0pt;
+       line-height:115%'>Antes de compilar, configure o tipo de placa correta e
+       a porta COM (se estiver usando algum dispositivo físico).</span></li>
+   <li class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+       line-height:115%'>Inicie a simulação no SimulIDE:</span></b></li>
+   <li class=MsoNormal style='line-height:115%'><span style='font-size:11.0pt;
+       line-height:115%'>Observe os dados no monitor serial do SimulIDE para
+       garantir que o sensor está funcionando corretamente.</span></li>
+  </ul>
+  <p class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+  line-height:115%'>8. Integração com Comunicações Seriais</span></b></p>
+  <ul style='margin-top:0cm' type=disc>
+   <li class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+       line-height:115%'>Configure portas seriais virtuais, se necessário
+       (com0com ou similar).</span></b></li>
+   <li class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+       line-height:115%'>Utilize ferramentas como NetCat ou Putty para testar a
+       comunicação.</span></b></li>
+  </ul>
+  <p class=MsoNormal style='line-height:115%'><b><span style='font-size:11.0pt;
+  line-height:115%'>Conclusão</span></b></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  line-height:115%'><span style='font-size:11.0pt;line-height:115%'>Ao final
+  dessa configuração, você deverá ter um ambiente de simulação funcional com
+  Arduino e SimulIDE, capaz de ler e processar dados de sensores virtuais.
+  Aproveite para experimentar e expandir os seus projetos com diferentes
+  componentes e funcionalidades!</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=TextoWeb style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:35.7pt;text-indent:-17.85pt;line-height:115%'><span
+style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>com0com</b>&nbsp;(Para criar portas seriais virtuais)</p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:42.3pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=604 valign=top style='width:453.35pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=TextoWeb style='line-height:115%'><span style='font-size:11.0pt;
+  line-height:115%'>A instalação do emulador de portas seriais virtuais com0com
+  é um passo importante para criar uma comunicação entre o SimulIDE e outros
+  aplicativos ou dispositivos. Aqui está um guia passo a passo para a
+  instalação e configuração do com0com:</span></p>
+  <p class=TextoWeb style='line-height:115%'><b><span style='font-size:11.0pt;
+  line-height:115%'>Guia de Instalação do com0com</span></b></p>
+  <p class=TextoWeb style='line-height:115%'><b><span style='font-size:11.0pt;
+  line-height:115%'>1. Download do com0com</span></b></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:11.0pt;line-height:115%'>Acesse o site
+  oficial do com0com: </span><a href="https://sourceforge.net/projects/com0com/"><span
+  style='font-size:11.0pt;line-height:115%'>com0com SourceForge</span></a><span
+  style='font-size:11.0pt;line-height:115%'>.</span></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:11.0pt;line-height:115%'>Clique no link
+  de download da versão mais recente (geralmente há um arquivo ZIP disponível).</span></p>
+  <p class=TextoWeb style='line-height:115%'><b><span style='font-size:11.0pt;
+  line-height:115%'>2. Instalação do com0com</span></b></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b><span style='font-size:11.0pt;line-height:115%'>Extraia o
+  arquivo ZIP:</span></b></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:11.0pt;line-height:115%'>Após o
+  download, extraia o conteúdo do arquivo ZIP em uma pasta de sua escolha.</span></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b><span style='font-size:11.0pt;line-height:115%'>Execute o
+  instalador:</span></b></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:11.0pt;line-height:115%'>Navegue até a
+  pasta extraída e execute o arquivo setup.exe ou similar.</span></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b><span style='font-size:11.0pt;line-height:115%'>Siga o
+  Wizard de instalação:</span></b></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:11.0pt;line-height:115%'>Durante a
+  instalação, você será orientado por um assistente. Escolha as opções padrão,
+  a menos que você tenha requisitos específicos.</span></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:11.0pt;line-height:115%'>O instalador
+  pode solicitar permissões de administrador; aceite para que a instalação
+  prossiga.</span></p>
+  <p class=TextoWeb style='line-height:115%'><b><span style='font-size:11.0pt;
+  line-height:115%'>3. Configuração do com0com</span></b></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b><span style='font-size:11.0pt;line-height:115%'>Abra o
+  'com0com Setup':</span></b></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:11.0pt;line-height:115%'>Após a
+  instalação, você pode encontrar o aplicativo no menu Iniciar ou na pasta onde
+  o com0com foi instalado. Execute setup para abrir a interface de configuração
+  do com0com.</span></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b><span style='font-size:11.0pt;line-height:115%'>Adicione um
+  par de portas seriais virtuais:</span></b></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:11.0pt;line-height:115%'>Na interface do
+  com0com, você verá opções para adicionar portas. Clique em &quot;Add
+  Pair&quot; ou &quot;Adicionar Par&quot;.</span></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:11.0pt;line-height:115%'>Você verá duas
+  novas portas seriais (por exemplo, COM3 e COM4).</span></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b><span style='font-size:11.0pt;line-height:115%'>Conclua a
+  configuração:</span></b></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:11.0pt;line-height:115%'>Após adicionar
+  as portas, clique em &quot;OK&quot; ou &quot;Aplicar&quot; para finalizar a
+  configuração.</span></p>
+  <p class=TextoWeb style='line-height:115%'><b><span style='font-size:11.0pt;
+  line-height:115%'>4. Verificação das Portas Virtuais</span></b></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b><span style='font-size:11.0pt;line-height:115%'>Acesse o
+  Gerenciador de Dispositivos do Windows:</span></b></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:11.0pt;line-height:115%'>Abra o
+  Gerenciador de Dispositivos (pressione Win + X e selecione Gerenciador de
+  Dispositivos).</span></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b><span style='font-size:11.0pt;line-height:115%'>Verifique as
+  portas:</span></b></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:11.0pt;line-height:115%'>Expanda a seção
+  &quot;Portas (COM &amp; LPT)&quot; e veja se suas novas portas (COM3 e COM4,
+  por exemplo) estão listadas. Isso confirma que o emulador foi instalado
+  corretamente.</span></p>
+  <p class=TextoWeb style='line-height:115%'><b><span style='font-size:11.0pt;
+  line-height:115%'>5. Configuração de Aplicativos</span></b></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b><span style='font-size:11.0pt;line-height:115%'>Configure o
+  SimulIDE:</span></b></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:11.0pt;line-height:115%'>No SimulIDE,
+  adicione um módulo de Interface Serial e configure-o para usar a porta COM
+  que você designou (ex: COM3).</span></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b><span style='font-size:11.0pt;line-height:115%'>Configure a
+  comunicação com outros aplicativos (como NetCat):</span></b></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:11.0pt;line-height:115%'>Para enviar
+  dados da porta COM4 para um aplicativo externo, você pode utilizar
+  ferramentas como NetCat.</span></p>
+  <p class=TextoWeb style='line-height:115%'><b><span style='font-size:11.0pt;
+  line-height:115%'>6. Teste da Comunicação</span></b></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b><span style='font-size:11.0pt;line-height:115%'>Verifique a
+  comunicação:</span></b></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:11.0pt;line-height:115%'>Utilize um
+  aplicativo como o PuTTY ou o próprio NetCat para garantir que as portas estão
+  comunicando corretamente entre si.</span></p>
+  <p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+  115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:11.0pt;line-height:115%'>Para abrir um
+  terminal no NetCat e redirecionar a saída, você pode fazer a seguinte
+  configuração (no prompt de comando):</span></p>
+  <p class=TextoWeb style='margin-left:35.4pt;line-height:115%'><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Courier New"'>nc -l -p
+  1234 &lt; COM4</span></p>
+  <p class=TextoWeb style='line-height:115%'><b><span style='font-size:11.0pt;
+  line-height:115%'>Conclusão</span></b></p>
+  <p class=TextoWeb style='line-height:115%'><span style='font-size:11.0pt;
+  line-height:115%'>Com o com0com instalado e configurado, você terá um
+  ambiente de portas seriais virtuais que permite a comunicação entre o
+  SimulIDE e outros softwares, oferecendo maior flexibilidade para simulações e
+  testes. Essa configuração é crucial para operações em que dispositivos
+  físicos ou virtuais precisam interagir com um servidor ou outro conjunto de
+  dispositivos.</span></p>
+  <p class=TextoWeb style='line-height:115%'><span style='font-size:11.0pt;
+  line-height:115%'>Aproveite a integração do com0com em seus projetos de
+  simulação e teste!</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=TextoWeb style='margin-top:12.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:115%'><span
+style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>VirtualBox</b>&nbsp;(Para virtualizar o Proxmox no Windows)</p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Proxmox VE</b>&nbsp;(Ambiente de virtualização onde rodaremos
+o servidor MQTT)</p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'><span style='font-size:10.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Mosquitto MQTT Broker</b>&nbsp;(Para gerenciar mensagens
+enviadas pelos sensores)</p>
+
+<p class=MsoNormal style='line-height:115%'><span style='font-size:10.0pt;
+line-height:115%'>&nbsp;</span></p>
+
+<div class=TextoWeb align=center style='text-align:center'>
+
+<hr size=2 width="100%" noshade style='color:black' align=center>
+
+</div>
+
+<p class=TextoWeb style='line-height:115%'><b>&nbsp;</b></p>
+
+<p class=Ttulo1ABNT><a name="_Toc193146477">8. Configuração do SimulIDE e
+Arduino Simulado</a></p>
+
+<p class=TextoWeb>&nbsp;</p>
+
+<p class=Ttulo2ABNT><a name="_Toc193146478">8.1 Adicionando o Arduino ao
+SimulIDE</a></p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Abra o <b>SimulIDE</b>.</p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Arraste o módulo <b>Arduino</b> para o painel de simulação.</p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Configure os pinos <b>4 (RX)</b> e <b>5 (TX)</b> para comunicação
+serial.</p>
+
+<p class=TextoWeb style='line-height:115%'><b>&nbsp;</b></p>
+
+<p class=Ttulo2ABNT><a name="_Toc193146479">8.2 Configurando o Módulo DHT22 no
+SimulIDE</a></p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>No <b>SimulIDE</b>, localize o sensor <b>DHT22</b> na biblioteca de
+componentes.</p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Arraste o módulo <b>DHT22</b> para o painel de simulação.</p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Conecte os pinos:</p>
+
+<p class=TextoWeb style='margin-left:72.0pt;text-indent:-18.0pt;line-height:
+115%'><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b>VCC</b>
+ao <b>5V</b> do Arduino.</p>
+
+<p class=TextoWeb style='margin-left:72.0pt;text-indent:-18.0pt;line-height:
+115%'><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b>GND</b>
+ao <b>GND</b> do Arduino.</p>
+
+<p class=TextoWeb style='margin-left:72.0pt;text-indent:-18.0pt;line-height:
+115%'><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b>DATA</b>
+ao <b>pino 6</b> do Arduino.</p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Configure o SimulIDE para visualizar os dados do sensor no monitor
+serial.</p>
+
+<p class=TextoWeb style='line-height:115%'><b>&nbsp;</b></p>
+
+<p class=Ttulo2ABNT><a name="_Toc193146480">8.3 Criando um Código para o DHT22
+no Arduino IDE</a></p>
+
+<p class=TextoWeb style='line-height:115%'>&nbsp;</p>
+
+<p class=TextoWeb style='line-height:115%'>Instale a biblioteca do <b>DHT</b>
+no Arduino IDE, se ainda não tiver:</p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Compile e execute o código no SimulIDE.</p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:36.0pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=661 valign=top style='width:495.65pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:115%'><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#1F7199'>#<b>include</b> </span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#4D99BF'>&lt;DHT.h&gt;</span><span style='font-size:10.0pt;line-height:
+  115%;font-family:"Courier New";color:#444444'><br>
+  </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#1F7199'>#<b>include</b> </span><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#4D99BF'>&lt;ArduinoJson.h&gt;</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'><br>
+  </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#1F7199'>#<b>include</b> </span><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#4D99BF'>&lt;SoftwareSerial.h&gt;</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'><br>
+  <br>
+  </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#888888'>// Definições do sensor DHT22</span><span style='font-size:
+  10.0pt;line-height:115%;font-family:"Courier New";color:#444444'><br>
+  </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#1F7199'>#<b>define</b> DHTPIN 6          </span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#888888'>// Pino onde o DHT22 está conectado</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'><br>
+  </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#1F7199'>#<b>define</b> DHTTYPE DHT22     </span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#888888'>// Tipo do sensor DHT</span><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#444444'><br>
+  <br>
+  DHT dht(DHTPIN, DHTTYPE);<br>
+  <br>
+  </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#888888'>// Definições da porta serial externa</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'><br>
+  </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#397300'>SoftwareSerial</span><span style='font-size:10.0pt;line-height:
+  115%;font-family:"Courier New";color:#444444'> extSerial(</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#880000'>4</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#444444'>, </span><span style='font-size:
+  10.0pt;line-height:115%;font-family:"Courier New";color:#880000'>5</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'>); </span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#888888'>// RX (pino 4), TX (pino 5)</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'><br>
+  <br>
+  </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#888888'>// Intervalo de leitura do sensor (em milissegundos)</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'><br>
+  <b>const</b> <b>unsigned</b> <b>long</b> READ_INTERVAL = </span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#880000'>5000</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#444444'>; </span><span style='font-size:
+  10.0pt;line-height:115%;font-family:"Courier New";color:#888888'>// Intervalo
+  de leitura (5s)</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#444444'><br>
+  <br>
+  </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#888888'>// Variáveis para controle de tempo</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'><br>
+  <b>unsigned</b> <b>long</b> lastReadTime = </span><span style='font-size:
+  10.0pt;line-height:115%;font-family:"Courier New";color:#880000'>0</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'>;<br>
+  <br>
+  </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#888888'>// Função para inicializar o sistema</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'><br>
+  <b>void</b> </span><span style='font-size:10.0pt;line-height:115%;font-family:
+  "Courier New";color:#397300'>setup</span><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#444444'>() {<br>
+      </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#888888'>// Inicializa a comunicação serial padrão para depuração
+  (opcional)</span><span style='font-size:10.0pt;line-height:115%;font-family:
+  "Courier New";color:#444444'><br>
+      </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#397300'>Serial</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#444444'>.</span><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#397300'>begin</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'>(</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#880000'>115200</span><span style='font-size:
+  10.0pt;line-height:115%;font-family:"Courier New";color:#444444'>);<br>
+      </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#397300'>delay</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#444444'>(</span><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#880000'>100</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'>); </span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#888888'>// Pequeno delay para estabilizar a
+  comunicação</span><span style='font-size:10.0pt;line-height:115%;font-family:
+  "Courier New";color:#444444'><br>
+  <br>
+      </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#888888'>// Inicializa a comunicação serial externa (COM3 no SimulIDE)</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'><br>
+      extSerial.</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#397300'>begin</span><span style='font-size:
+  10.0pt;line-height:115%;font-family:"Courier New";color:#444444'>(</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#880000'>9600</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#444444'>); </span><span style='font-size:
+  10.0pt;line-height:115%;font-family:"Courier New";color:#888888'>// Taxa de
+  transmissão ajustada para 9600 bps</span><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#444444'><br>
+      </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#397300'>delay</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#444444'>(</span><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#880000'>100</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'>);<br>
+  <br>
+      </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#888888'>// Inicializa o sensor DHT</span><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#444444'><br>
+      dht.</span><span style='font-size:10.0pt;line-height:115%;font-family:
+  "Courier New";color:#397300'>begin</span><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#444444'>();<br>
+      </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#397300'>Serial</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#444444'>.</span><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#397300'>println</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'>(</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#880000'>&quot;Sistema iniciado. Aguardando
+  leitura de dados...&quot;</span><span style='font-size:10.0pt;line-height:
+  115%;font-family:"Courier New";color:#444444'>);<br>
+      extSerial.</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#397300'>println</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'>(</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#880000'>&quot;Sistema iniciado. Aguardando
+  leitura de dados...&quot;</span><span style='font-size:10.0pt;line-height:
+  115%;font-family:"Courier New";color:#444444'>);<br>
+  }<br>
+  <br>
+  </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#888888'>// Função para ler dados do sensor e enviar via SoftwareSerial</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'><br>
+  <b>void</b> readAndSendData() {<br>
+      </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#888888'>// Lê os dados do sensor DHT22</span><span style='font-size:
+  10.0pt;line-height:115%;font-family:"Courier New";color:#444444'><br>
+      <b>float</b> h = dht.readHumidity();<br>
+      <b>float</b> t = dht.</span><span style='font-size:10.0pt;line-height:
+  115%;font-family:"Courier New";color:#397300'>readTemperature</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'>();<br>
+  <br>
+      </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#888888'>// Verifica se as leituras falharam</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'><br>
+      </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#397300'>if</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#444444'> (isnan(h) || isnan(t)) {<br>
+          </span><span style='font-size:10.0pt;line-height:115%;font-family:
+  "Courier New";color:#397300'>Serial</span><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#444444'>.</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#397300'>println</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#444444'>(</span><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#880000'>&quot;Falha ao ler
+  do DHT!&quot;</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#444444'>);<br>
+          extSerial.</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#397300'>println</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'>(</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#880000'>&quot;Falha ao ler do DHT!&quot;</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'>);<br>
+          </span><span style='font-size:10.0pt;line-height:115%;font-family:
+  "Courier New";color:#397300'>return</span><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#444444'>;<br>
+      }<br>
+  <br>
+      </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#888888'>// Cria um documento JSON usando ArduinoJson</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'><br>
+      StaticJsonDocument&lt;</span><span style='font-size:10.0pt;line-height:
+  115%;font-family:"Courier New";color:#880000'>200</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'>&gt; doc;<br>
+      doc[</span><span style='font-size:10.0pt;line-height:115%;font-family:
+  "Courier New";color:#880000'>&quot;temperatura&quot;</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'>] = t;<br>
+      doc[</span><span style='font-size:10.0pt;line-height:115%;font-family:
+  "Courier New";color:#880000'>&quot;umidade&quot;</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'>] = h;<br>
+  <br>
+      </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#888888'>// Serializa o JSON em um buffer</span><span style='font-size:
+  10.0pt;line-height:115%;font-family:"Courier New";color:#444444'><br>
+      <b>char</b> </span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#397300'>buffer</span><span style='font-size:
+  10.0pt;line-height:115%;font-family:"Courier New";color:#444444'>[</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#880000'>200</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#444444'>];<br>
+      serializeJson(doc, </span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#397300'>buffer</span><span style='font-size:
+  10.0pt;line-height:115%;font-family:"Courier New";color:#444444'>);<br>
+  <br>
+      </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#888888'>// Envia os dados via SoftwareSerial (COM3 no SimulIDE)</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'><br>
+      extSerial.</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#397300'>println</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'>(</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#397300'>buffer</span><span style='font-size:
+  10.0pt;line-height:115%;font-family:"Courier New";color:#444444'>);<br>
+  <br>
+      </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#888888'>// Exibe os dados no monitor serial padrão para depuração
+  (opcional)</span><span style='font-size:10.0pt;line-height:115%;font-family:
+  "Courier New";color:#444444'><br>
+      </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#397300'>Serial</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#444444'>.</span><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#397300'>print</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'>(</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#880000'>&quot;Dados enviados: &quot;</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'>);<br>
+      </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#397300'>Serial</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#444444'>.</span><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#397300'>println</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'>(</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#397300'>buffer</span><span style='font-size:
+  10.0pt;line-height:115%;font-family:"Courier New";color:#444444'>);<br>
+  }<br>
+  <br>
+  </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#888888'>// Função principal de loop</span><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#444444'><br>
+  <b>void</b> </span><span style='font-size:10.0pt;line-height:115%;font-family:
+  "Courier New";color:#397300'>loop</span><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#444444'>() {<br>
+      </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#888888'>// Verifica se é hora de ler os dados do sensor</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'><br>
+      <b>unsigned</b> <b>long</b> now = </span><span style='font-size:10.0pt;
+  line-height:115%;font-family:"Courier New";color:#397300'>millis</span><span
+  style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#444444'>();<br>
+      </span><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New";
+  color:#397300'>if</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#444444'> (now - lastReadTime &gt;=
+  READ_INTERVAL) {<br>
+          lastReadTime = now;<br>
+          readAndSendData(); </span><span style='font-size:10.0pt;line-height:
+  115%;font-family:"Courier New";color:#888888'>// Lê e envia os dados via
+  SoftwareSerial</span><span style='font-size:10.0pt;line-height:115%;
+  font-family:"Courier New";color:#444444'><br>
+      }<br>
+  }</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>No monitor serial do SimulIDE, verifique os valores lidos pelo sensor.</p>
+
+<p class=TextoWeb style='line-height:115%'><b>&nbsp;</b></p>
+
+<p class=Ttulo2ABNT><a name="_Toc193146481">8.4 Configurando a Porta Serial
+Virtual</a></p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Instale o <b>com0com</b> e crie duas portas seriais virtuais:</p>
+
+<p class=TextoWeb style='margin-left:72.0pt;text-indent:-18.0pt;line-height:
+115%'><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b>COM3</b>
+(para comunicação com o SimulIDE)</p>
+
+<p class=TextoWeb style='margin-left:72.0pt;text-indent:-18.0pt;line-height:
+115%'><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b>COM4</b>
+(para comunicação com aplicativos externos)</p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>No <b>SimulIDE</b>, adicione o módulo <b>Interface Serial</b> e defina a
+porta como <b>COM3</b>.</p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>No <b>Arduino IDE</b>, configure a porta <b>COM3</b> para interação com
+o Arduino simulado.</p>
+
+<div class=TextoWeb align=center style='text-align:center;line-height:115%'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<p class=TextoWeb style='line-height:115%'><b>&nbsp;</b></p>
+
+<p class=Ttulo1ABNT><a name="_Toc193146482">9 Configuração da Conexão com o Script
+Python</a></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='line-height:115%'><b>Script Python</b>: </li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='line-height:115%'>Instalar biblioteca <b>pyserial</b>
+      para leitura dos dados da porta serial.</li>
+  <li class=MsoNormal style='line-height:115%'>Instalar biblioteca <b>paho-mqtt</b>
+      para publicação dos dados no broker MQTT.</li>
+  <li class=MsoNormal style='line-height:115%'>Instalar biblioteca <b>json</b>
+      para manipulação dos dados.</li>
+ </ul>
+</ul>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='line-height:115%'><span lang=EN-US>pip install
+     pyserial paho-mqtt json pyserial</span></li>
+ <li class=MsoNormal style='line-height:115%'>Escrever o código da ponte Python
+     MQTT (arquivo: <span style='font-size:10.0pt;line-height:115%;font-family:
+     "Courier New"'>pontemqtt.py</span>): </li>
+</ul>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:36.0pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=661 valign=top style='width:495.65pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#444444'>import</span></b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:#444444'> serial<br>
+  <b>import</b> paho.mqtt.client <b>as</b> mqtt<br>
+  <b>import</b> json<br>
+  <b>from</b> paho.mqtt.client <b>import</b> CallbackAPIVersion<br>
+  <br>
+  </span><span style='font-size:10.0pt;font-family:"Courier New";color:#888888'>#
+  Configurações do broker MQTT</span><span style='font-size:10.0pt;font-family:
+  "Courier New";color:#444444'><br>
+  mqtt_broker = </span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#880000'>&quot;localhost&quot;</span><span style='font-size:10.0pt;
+  font-family:"Courier New";color:#444444'>  </span><span style='font-size:
+  10.0pt;font-family:"Courier New";color:#888888'># Endereço do broker MQTT</span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:#444444'><br>
+  mqtt_topic = </span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#880000'>&quot;sensor/dht22&quot;</span><span style='font-size:10.0pt;
+  font-family:"Courier New";color:#444444'><br>
+  mqtt_client = mqtt.Client(callback_api_version=CallbackAPIVersion.VERSION1,
+  client_id=</span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#880000'>&quot;PythonClient&quot;</span><span style='font-size:10.0pt;
+  font-family:"Courier New";color:#444444'>)<br>
+  mqtt_client.connect(mqtt_broker, </span><span style='font-size:10.0pt;
+  font-family:"Courier New";color:#880000'>1883</span><span style='font-size:
+  10.0pt;font-family:"Courier New";color:#444444'>, </span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:#880000'>60</span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:#444444'>)<br>
+  <br>
+  </span><span style='font-size:10.0pt;font-family:"Courier New";color:#888888'>#
+  Configurações da porta serial</span><span style='font-size:10.0pt;font-family:
+  "Courier New";color:#444444'><br>
+  serial_port = </span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#880000'>&quot;COM4&quot;</span><span style='font-size:10.0pt;
+  font-family:"Courier New";color:#444444'>  </span><span style='font-size:
+  10.0pt;font-family:"Courier New";color:#888888'># Ajuste para a porta correta</span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:#444444'><br>
+  baud_rate = </span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#880000'>9600</span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#444444'><br>
+  ser = serial.Serial(serial_port, baud_rate, timeout=</span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:#880000'>1</span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:#444444'>)<br>
+  <br>
+  print(</span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#880000'>&quot;Lendo dados da porta serial e publicando no MQTT...&quot;</span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:#444444'>)<br>
+  <br>
+  <b>while</b> </span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#78A960'>True</span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#444444'>:<br>
+      <b>if</b> ser.in_waiting &gt; </span><span style='font-size:10.0pt;
+  font-family:"Courier New";color:#880000'>0</span><span style='font-size:10.0pt;
+  font-family:"Courier New";color:#444444'>:<br>
+          line = ser.readline().decode(</span><span style='font-size:10.0pt;
+  font-family:"Courier New";color:#880000'>'utf-8'</span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:#444444'>).strip()<br>
+          <b>try</b>:<br>
+              data = json.loads(line)  </span><span style='font-size:10.0pt;
+  font-family:"Courier New";color:#888888'># Parse JSON</span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:#444444'><br>
+              print(</span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#880000'>f&quot;Dados recebidos: </span><span style='font-size:10.0pt;
+  font-family:"Courier New";color:#444444'>{data}</span><span style='font-size:
+  10.0pt;font-family:"Courier New";color:#880000'>&quot;</span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:#444444'>)<br>
+              mqtt_client.publish(mqtt_topic, line)  </span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:#888888'># Publica no
+  MQTT</span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#444444'><br>
+              print(</span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#880000'>f&quot;Dados publicados no tópico </span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:#444444'>{mqtt_topic}</span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:#880000'>&quot;</span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:#444444'>)<br>
+          <b>except</b> json.JSONDecodeError:<br>
+              print(</span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#880000'>&quot;Erro ao decodificar JSON&quot;</span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:#444444'>)</span></p>
+  </td>
+ </tr>
+</table>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='line-height:115%'>Criar e executar o script Python
+     para receber os dados da porta serial e publicá-los no MQTT.</li>
+</ul>
+
+<div class=TextoWeb align=center style='text-align:center;line-height:115%'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<p class=TextoWeb><b><span style='font-size:11.0pt'>&nbsp;</span></b></p>
+
+<p class=Ttulo1ABNT><a name="_Toc193146483">10 Instalando e Configurando o
+Proxmox no VirtualBox</a></p>
+
+<p class=TextoWeb style='line-height:115%'><b>&nbsp;</b></p>
+
+<p class=Ttulo2ABNT><a name="_Toc193146484">10.1 Criando a Máquina Virtual no
+VirtualBox</a></p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Abra o <b>VirtualBox</b> e crie uma nova VM com as seguintes
+configurações:</p>
+
+<p class=TextoWeb style='margin-left:72.0pt;text-indent:-18.0pt;line-height:
+115%'><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span>Nome: <b>Proxmox</b></p>
+
+<p class=TextoWeb style='margin-left:72.0pt;text-indent:-18.0pt;line-height:
+115%'><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span>Tipo: <b>Linux</b></p>
+
+<p class=TextoWeb style='margin-left:72.0pt;text-indent:-18.0pt;line-height:
+115%'><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span>Memória: <b>4GB
+RAM</b></p>
+
+<p class=TextoWeb style='margin-left:72.0pt;text-indent:-18.0pt;line-height:
+115%'><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span>Disco: <b>20GB</b>
+(ou mais)</p>
+
+<p class=TextoWeb style='margin-left:72.0pt;text-indent:-18.0pt;line-height:
+115%'><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span>Rede: <b>Modo
+Bridge</b></p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Instale o <b>Proxmox VE</b> normalmente.</p>
+
+<p class=TextoWeb style='line-height:115%'><b>&nbsp;</b></p>
+
+<p class=Ttulo2ABNT><a name="_Toc193146485">10.2 Instalando o Mosquitto MQTT
+Broker</a></p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Acesse o terminal do Proxmox e instale o Mosquitto:</p>
+
+<p class=TextoWeb style='line-height:115%'><span lang=EN-US style='font-size:
+11.0pt;line-height:115%;font-family:"Courier New"'>apt update &amp;&amp; apt
+install mosquitto mosquitto-clients -y</span></p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Inicie o Mosquitto:</p>
+
+<p class=TextoWeb style='line-height:115%'><span style='font-size:11.0pt;
+line-height:115%;font-family:"Courier New"'>systemctl start mosquitto</span></p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Edite o arquivo de configuração para permitir conexão externa:</p>
+
+<p class=TextoWeb style='line-height:115%'><span style='font-size:11.0pt;
+line-height:115%;font-family:"Courier New"'>nano /etc/mosquitto/mosquitto.conf</span></p>
+
+<p class=TextoWeb style='margin-left:72.0pt;text-indent:-18.0pt;line-height:
+115%'><span style='font-size:10.0pt;line-height:115%;font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span>Adicione
+a linha:</p>
+
+<p class=TextoWeb style='line-height:115%'><span style='font-size:11.0pt;
+line-height:115%;font-family:"Courier New"'>listener 1883 0.0.0.0</span></p>
+
+<p class=TextoWeb style='line-height:115%'><span style='font-size:11.0pt;
+line-height:115%;font-family:"Courier New"'>allow_anonymous true</span></p>
+
+<p class=TextoWeb style='margin-left:36.0pt;text-indent:-18.0pt;line-height:
+115%'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Reinicie o Mosquitto:</p>
+
+<p class=TextoWeb style='line-height:115%'><span style='font-size:11.0pt;
+line-height:115%;font-family:"Courier New"'>systemctl restart mosquitto</span></p>
+
+<p class=TextoWeb style='line-height:115%'>&nbsp;</p>
+
+<p class=Ttulo1ABNT><a name="_Toc193146486">11. Testando a Comunicação</a></p>
+
+<p class=TextoWeb align=left style='text-align:left;line-height:115%'>Para
+garantir que tudo está funcionando:</p>
+
+<p class=TextoWeb align=left style='margin-left:36.0pt;text-align:left;
+text-indent:-18.0pt;line-height:115%'><span style='font-size:10.0pt;line-height:
+115%;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>No SimulIDE, veja se o Arduino está enviando dados na serial.</p>
+
+<p class=TextoWeb align=left style='margin-left:36.0pt;text-align:left;
+text-indent:-18.0pt;line-height:115%'><span style='font-size:10.0pt;line-height:
+115%;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>No NetCat, verifique se os dados estão sendo redirecionados.</p>
+
+<p class=TextoWeb align=left style='margin-left:36.0pt;text-align:left;
+text-indent:-18.0pt;line-height:115%'><span style='font-size:10.0pt;line-height:
+115%;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>No Proxmox, use o Mosquitto para ver se os dados estão chegando.</p>
+
+<p class=TextoWeb align=left style='text-align:left;line-height:115%'>Se tudo
+estiver correto, seu ambiente de simulação estará configurado com sucesso! <span
+style='font-family:"Segoe UI Emoji",sans-serif'>&#128640;</span></p>
+
+<div class=TextoWeb align=left style='text-align:left;line-height:115%'>
+
+<hr size=2 width="100%" align=left>
+
+</div>
+
+<p class=TextoWeb align=left style='text-align:left;line-height:115%'><b>&nbsp;</b></p>
+
+<p class=Ttulo1ABNT><a name="_Toc193146487">12 Conclusão</a></p>
+
+<p class=TextoWeb align=left style='text-align:left'>&nbsp;</p>
+
+<p class=TextoWeb align=left style='text-align:left;line-height:115%'>Com este
+guia, você aprendeu a:</p>
+
+<p class=TextoWeb align=left style='margin-left:36.0pt;text-align:left;
+text-indent:-18.0pt;line-height:115%'><span style='font-size:10.0pt;line-height:
+115%;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Configurar o SimulIDE e um Arduino simulado.</p>
+
+<p class=TextoWeb align=left style='margin-left:36.0pt;text-align:left;
+text-indent:-18.0pt;line-height:115%'><span style='font-size:10.0pt;line-height:
+115%;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Criar portas seriais virtuais para comunicação.</p>
+
+<p class=TextoWeb align=left style='margin-left:36.0pt;text-align:left;
+text-indent:-18.0pt;line-height:115%'><span style='font-size:10.0pt;line-height:
+115%;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Usar o script Python para encaminhar dados para o Proxmox.</p>
+
+<p class=TextoWeb align=left style='margin-left:36.0pt;text-align:left;
+text-indent:-18.0pt;line-height:115%'><span style='font-size:10.0pt;line-height:
+115%;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Rodar um servidor MQTT no Proxmox virtualizado no VirtualBox.</p>
+
+<p class=TextoWeb align=left style='margin-left:36.0pt;text-align:left;
+text-indent:-18.0pt;line-height:115%'><span style='font-size:10.0pt;line-height:
+115%;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Testar a comunicação entre os dispositivos.</p>
+
+<p class=TextoWeb align=left style='margin-left:36.0pt;text-align:left;
+text-indent:-18.0pt;line-height:115%'><span style='font-size:10.0pt;line-height:
+115%;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Integrar um sensor <b>DHT22</b> ao Arduino simulado.</p>
+
+<p class=TextoWeb align=left style='text-align:left;line-height:115%'>&nbsp;</p>
+
+<p class=TextoWeb align=left style='text-align:left;line-height:115%'>Agora,
+você pode expandir o projeto adicionando mais sensores ou integrando com
+dashboards para visualizar os dados recebidos! </p>
+
+<p class=TextoWeb align=left style='text-align:left;line-height:115%'>&nbsp;</p>
+
+<div style='border:none;border-top:solid windowtext 1.0pt;padding:1.0pt 0cm 0cm 0cm'>
+
+<p class=TextoWeb align=left style='text-align:left;line-height:115%;
+border:none;padding:0cm'>&nbsp;</p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
