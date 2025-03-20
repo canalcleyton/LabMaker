@@ -1,78 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cultura Maker na Indústria 4.0</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="estilow3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-* {
-box-sizing: border-box;
-}
-.menu {
-float: left;
-width: 20%;
-}
-.menuitem {
-padding: 8px;
-margin-top: 7px;
-border-bottom: 1px solid #f1f1f1;
-}
-.main {
-float: left;
-width: 60%;
-padding: 0 20px;
-overflow: hidden;
-}
-.right {
-background-color: lightblue;
-float: left;
-width: 20%;
-padding: 10px 15px;
-margin-top: 7px;
-}
-@media only screen and (max-width:800px) {
-.main {
-width: 80%;
-padding: 0;
-}
-.right {
-width: 100%;
-}
-}
-@media only screen and (max-width:500px) {
-.menu, .main, .right {
-width: 100%;
-}
-}
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
 </style>
 </head>
-<body style="font-family:Verdana;">
+<body>
 
-<div style="background-color:#f1f1f1;padding:15px;">
-<h1>Cultura Maker</h1>
-<h3>Espaços de Criação e Inovação</h3>
-</div>
-<div style="overflow:auto">
-<div class="menu">
-<div class="menuitem">Fablabs</div>
-<div class="menuitem">Workshops</div>
-<div class="menuitem">História do Maker</div>
-<div class="menuitem">Galeria de Projetos</div>
-</div>
-<div class="main">
-<h2>Fablabs e Makerspaces</h2>
-<p>Os Fablabs são espaços colaborativos que proporcionam acesso a ferramentas e tecnologia, permitindo a criação de protótipos e projetos inovadores. Esses espaços fomentam a criatividade e a experimentação.</p>
-<img src="img_fablab.jpg" style="width:100%" alt="Fablab Example">
-</div>
-<div class="right">
-<h2>O Que é?</h2>
-<p>A Cultura Maker é um movimento de pessoas que fazem, criam e compartilham, levando a conceitos como DIY (faça você mesmo) e inovação colaborativa.</p>
-<h2>Onde Encontrar?</h2>
-<p>Makerspaces estão disponíveis em várias cidades e universidades, sempre prontos para receber entusiastas da invenção.</p>
-<h2>Custo?</h2>
-<p>O acesso ao makerspace pode ser gratuito ou ter uma taxa simbólica, dependendo da localização e do evento.</p>
+<!-- Navbar -->
+<div class="adapt-top">
+<div class="adapt-bar adapt-black adapt-card">
+<a href="#" class="adapt-bar-item adapt-button adapt-padding-large">INÍCIO</a>
+<a href="#cultura-maker" class="adapt-bar-item adapt-button adapt-padding-large adapt-hide-small">CULTURA MAKER</a>
+<a href="#eventos" class="adapt-bar-item adapt-button adapt-padding-large adapt-hide-small">EVENTOS</a>
+<a href="#contato" class="adapt-bar-item adapt-button adapt-padding-large adapt-hide-small">CONTATO</a>
+<div class="adapt-dropdown-hover adapt-hide-small">
+<button class="adapt-padding-large adapt-button" title="Mais">MAIS <i class="fa fa-caret-down"></i></button>
+<div class="adapt-dropdown-content adapt-bar-block adapt-card-4">
+<a href="#" class="adapt-bar-item adapt-button">RECURSOS</a>
+<a href="#" class="adapt-bar-item adapt-button">PROJETOS</a>
+<a href="#" class="adapt-bar-item adapt-button">COMUNIDADE</a>
 </div>
 </div>
-<div style="background-color:#f1f1f1;text-align:center;padding:10px;margin-top:7px;font-size:12px;">
-Este site é uma demonstração da Cultura Maker e como os espaços de criação podem transformar ideias em realidade.
+<a href="javascript:void(0)" class="adapt-padding-large adapt-hover-red adapt-hide-small adapt-right"><i class="fa fa-search"></i></a>
 </div>
+</div>
+
+<!-- Page content -->
+<div class="adapt-content" style="max-width:2000px;margin-top:46px">
+
+<!-- Automatic Slideshow Images -->
+<div class="mySlides adapt-display-container adapt-center">
+<img src="/adaptimages/la.jpg" style="width:100%">
+<div class="adapt-display-bottommiddle adapt-container adapt-text-white adapt-padding-32 adapt-hide-small">
+<h3>Fabricação Digital</h3>
+<p><b>Explorando as possibilidades da impressão 3D.</b></p>
+</div>
+</div>
+<div class="mySlides adapt-display-container adapt-center">
+<img src="/adaptimages/ny.jpg" style="width:100%">
+<div class="adapt-display-bottommiddle adapt-container adapt-text-white adapt-padding-32 adapt-hide-small">
+<h3>IoT e Automação</h3>
+<p><b>Como a Indústria 4.0 transforma o nosso dia a dia.</b></p>
+</div>
+</div>
+<div class="mySlides adapt-display-container adapt-center">
+<img src="/adaptimages/chicago.jpg" style="width:100%">
+<div class="adapt-display-bottommiddle adapt-container adapt-text-white adapt-padding-32 adapt-hide-small">
+<h3>Educação Maker</h3>
+<p><b>Fomentando a criatividade nas escolas.</b></p>
+</div>
+</div>
+
+<!-- A Seção da Cultura Maker -->
+<div class="adapt-container adapt-content adapt-center adapt-padding-64" style="max-width:800px" id="cultura-maker">
+<h2 class="adapt-wide">CULTURA MAKER</h2>
+<p class="adapt-opacity"><i>Inovação pela Criatividade</i></p>
+<p class="adapt-justify">A Cultura Maker é a expressão de um movimento que combina tecnologia, criatividade e colaboração. Na Indústria 4.0, isso se traduz em novas maneiras de criar, prototipar e fabricar produtos. O uso de impressoras 3D, eletrônicos programáveis e a conexão em rede são fundamentais para este novo paradigma industrial.</p>
+</div>
+
+<!-- Seção de Eventos -->
+<div class="adapt-black" id="eventos">
+<div class="adapt-container adapt-content adapt-padding-64" style="max-width:800px">
+<h2 class="adapt-wide adapt-center">EVENTOS</h2>
+<p class="adapt-opacity adapt-center"><i>Participe das nossas oficinas e hackathons!</i></p><br>
+<ul class="adapt-ul adapt-border adapt-white adapt-text-grey">
+<li class="adapt-padding">Workshop de Impressão 3D - <span class="adapt-tag adapt-red adapt-margin-left">Vagas Limitadas</span></li>
+<li class="adapt-padding">Hackathon de IoT - <span class="adapt-tag adapt-red adapt-margin-left">Inscrições Abertas</span></li>
+<li class="adapt-padding">Festa Maker - <span class="adapt-badge adapt-right adapt-margin-right">Grátis</span></li>
+</ul>
+</div>
+</div>
+
+<!-- Seção de Contato -->
+<div class="adapt-container adapt-content adapt-padding-64" style="max-width:800px" id="contato">
+<h2 class="adapt-wide adapt-center">CONTATO</h2>
+<p class="adapt-opacity adapt-center"><i>Tem perguntas ou sugestões? Entre em contato!</i></p>
+<div class="adapt-row adapt-padding-32">
+<div class="adapt-col m6 adapt-large adapt-margin-bottom">
+<i class="fa fa-map-marker" style="width:30px"></i> São Paulo, SP<br>
+<i class="fa fa-phone" style="width:30px"></i> Telefone: +55 11 9999-9999<br>
+<i class="fa fa-envelope" style="width:30px"> </i> Email: contato@culturamaker.com.br<br>
+</div>
+<div class="adapt-col m6">
+<form action="/action_page.php" target="_blank">
+<div class="adapt-row-padding" style="margin:0 -16px 8px -16px">
+<div class="adapt-half">
+<input class="adapt-input adapt-border" type="text" placeholder="Nome" required name="Nome">
+</div>
+<div class="adapt-half">
+<input class="adapt-input adapt-border" type="text" placeholder="Email" required name="Email">
+</div>
+</div>
+<input class="adapt-input adapt-border" type="text" placeholder="Mensagem" required name="Mensagem">
+<button class="adapt-button adapt-black adapt-section adapt-right" type="submit">ENVIAR</button>
+</form>
+</div>
+</div>
+</div>
+
+<!-- Image of location/map -->
+<img src="/adaptimages/map.jpg" class="adapt-image adapt-greyscale-min" style="width:100%">
+
+<!-- Footer -->
+<footer class="adapt-container adapt-padding-64 adapt-center adapt-opacity adapt-light-grey adapt-xlarge">
+<i class="fa fa-facebook-official adapt-hover-opacity"></i>
+<i class="fa fa-instagram adapt-hover-opacity"></i>
+<i class="fa fa-snapchat adapt-hover-opacity"></i>
+<i class="fa fa-pinterest-p adapt-hover-opacity"></i>
+<i class="fa fa-twitter adapt-hover-opacity"></i>
+<i class="fa fa-linkedin adapt-hover-opacity"></i>
+<p class="adapt-medium">Powered by <a href="https://www.adaptschools.com/adaptcss/default.asp" target="_blank">adapt.css</a></p>
+</footer>
+</div>
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+var i;
+var x = document.getElementsByClassName("mySlides");
+for (i = 0; i < x.length; i++) {
+x[i].style.display = "none";
+}
+myIndex++;
+if (myIndex > x.length) {myIndex = 1}
+x[myIndex-1].style.display = "block";
+setTimeout(carousel, 4000); // Change image every 4 seconds
+}
+</script>
+
 </body>
 </html>
