@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<title>Cultura Maker na Indústria 4.0</title>
+<title>Cultura Maker 4.0</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="estilo-adapted.css">
@@ -17,114 +18,161 @@ body {font-family: "Lato", sans-serif}
 <!-- Navbar -->
 <div class="adapt-top">
 <div class="adapt-bar adapt-black adapt-card">
-<a href="#" class="adapt-bar-item adapt-button adapt-padding-large">HOME</a>
-<a href="#cultura" class="adapt-bar-item adapt-button adapt-padding-large adapt-hide-small">CULTURA MAKER</a>
-<a href="#industrias" class="adapt-bar-item adapt-button adapt-padding-large adapt-hide-small">INDÚSTRIAS</a>
+<a class="adapt-bar-item adapt-button adapt-padding-large adapt-hide-medium adapt-hide-large adapt-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+<a href="#" class="adapt-bar-item adapt-button adapt-padding-large">INÍCIO</a>
+<a href="#projetos" class="adapt-bar-item adapt-button adapt-padding-large adapt-hide-small">PROJETOS</a>
+<a href="#eventos" class="adapt-bar-item adapt-button adapt-padding-large adapt-hide-small">EVENTOS</a>
 <a href="#contato" class="adapt-bar-item adapt-button adapt-padding-large adapt-hide-small">CONTATO</a>
 <div class="adapt-dropdown-hover adapt-hide-small">
 <button class="adapt-padding-large adapt-button" title="Mais">MAIS <i class="fa fa-caret-down"></i></button>
 <div class="adapt-dropdown-content adapt-bar-block adapt-card-4">
-<a href="#" class="adapt-bar-item adapt-button">Eventos</a>
 <a href="#" class="adapt-bar-item adapt-button">Recursos</a>
+<a href="#" class="adapt-bar-item adapt-button">Inspiração</a>
+<a href="#" class="adapt-bar-item adapt-button">Comunidade</a>
 </div>
 </div>
 <a href="javascript:void(0)" class="adapt-padding-large adapt-hover-red adapt-hide-small adapt-right"><i class="fa fa-search"></i></a>
 </div>
 </div>
 
+<!-- Navbar on small screens -->
+<div id="navDemo" class="adapt-bar-block adapt-black adapt-hide adapt-hide-large adapt-hide-medium adapt-top" style="margin-top:46px">
+<a href="#projetos" class="adapt-bar-item adapt-button adapt-padding-large" onclick="myFunction()">PROJETOS</a>
+<a href="#eventos" class="adapt-bar-item adapt-button adapt-padding-large" onclick="myFunction()">EVENTOS</a>
+<a href="#contato" class="adapt-bar-item adapt-button adapt-padding-large" onclick="myFunction()">CONTATO</a>
+<a href="#" class="adapt-bar-item adapt-button adapt-padding-large" onclick="myFunction()">RECURSOS</a>
+</div>
+
+<!-- Page content -->
+<div class="adapt-content" style="max-width:2000px;margin-top:46px">
+
 <!-- Automatic Slideshow Images -->
 <div class="mySlides adapt-display-container adapt-center">
-<img src="imagem-cultura1.jpg" style="width:100%">
+<img src="/adaptimages/maker_space.jpg" style="width:100%">
 <div class="adapt-display-bottommiddle adapt-container adapt-text-white adapt-padding-32 adapt-hide-small">
-<h3>Cultura Maker</h3>
-<p><b>Inovação e criatividade na Indústria 4.0!</b></p>
+<h3>Espaços Maker</h3>
+<p><b>Explorando a criatividade e a inovação em nossos espaços!</b></p>
 </div>
 </div>
 <div class="mySlides adapt-display-container adapt-center">
-<img src="imagem-cultura2.jpg" style="width:100%">
+<img src="/adaptimages/workshop.jpg" style="width:100%">
 <div class="adapt-display-bottommiddle adapt-container adapt-text-white adapt-padding-32 adapt-hide-small">
-<h3>Fabricação Digital</h3>
-<p><b>Utilizando a tecnologia para criar soluções.</b></p>
+<h3>Oficinas de Habilidades</h3>
+<p><b>Aprenda novas habilidades e faça parte da mudança!</b></p>
 </div>
 </div>
 <div class="mySlides adapt-display-container adapt-center">
-<img src="imagem-cultura3.jpg" style="width:100%">
+<img src="/adaptimages/collaboration.jpg" style="width:100%">
 <div class="adapt-display-bottommiddle adapt-container adapt-text-white adapt-padding-32 adapt-hide-small">
-<h3>Educação Maker</h3>
-<p><b>Preparando a próxima geração de inovadores.</b></p>
+<h3>Colaboração Criativa</h3>
+<p><b>Trabalhe juntos em projetos inovadores!</b></p>
 </div>
 </div>
 
-<!-- Cultura Maker Section -->
-<div class="adapt-container adapt-content adapt-center adapt-padding-64" style="max-width:800px" id="cultura">
-<h2 class="adapt-wide">CULTURA MAKER</h2>
-<p class="adapt-opacity"><i>Promovendo a inovação</i></p>
-<p class="adapt-justify">A Cultura Maker na Indústria 4.0 promove a participação ativa dos indivíduos na criação de novos produtos e soluções, utilizando tecnologias como impressão 3D, robótica e IoT. Essa abordagem estimula a criatividade e a colaboração entre diferentes áreas de conhecimento.</p>
+<!-- A Seção de Projetos -->
+<div class="adapt-container adapt-content adapt-center adapt-padding-64" style="max-width:800px" id="projetos">
+<h2 class="adapt-wide">PROJETOS MAKER</h2>
+<p class="adapt-opacity"><i>Construa e compartilhe sua criatividade!</i></p>
+<p class="adapt-justify">Junte-se a nós na Cultura Maker 4.0, onde inovação e criatividade encontram a tecnologia. Abaixo estão alguns dos nossos projetos favoritos:</p>
+
+<div class="adapt-row adapt-padding-32">
+<div class="adapt-third">
+<p>Projeto 1</p>
+<img src="/adaptimages/project1.jpg" class="adapt-round adapt-margin-bottom" alt="Projeto 1" style="width:60%">
+</div>
+<div class="adapt-third">
+<p>Projeto 2</p>
+<img src="/adaptimages/project2.jpg" class="adapt-round adapt-margin-bottom" alt="Projeto 2" style="width:60%">
+</div>
+<div class="adapt-third">
+<p>Projeto 3</p>
+<img src="/adaptimages/project3.jpg" class="adapt-round" alt="Projeto 3" style="width:60%">
+</div>
+</div>
 </div>
 
-<!-- Indústrias Section -->
-<div class="adapt-black" id="industrias">
-<div class="adapt-container adapt-content adapt-padding-64" style="max-width:800px">
-<h2 class="adapt-wide adapt-center">INDÚSTRIAS INOVADORAS</h2>
+<!-- A Seção de Eventos -->
+<div class="adapt-container adapt-content adapt-padding-64" style="max-width:800px" id="eventos">
+<h2 class="adapt-wide">EVENTOS</h2>
+<p class="adapt-opacity adapt-center"><i>Participe de nossos eventos e workshops!</i></p>
 <ul class="adapt-ul adapt-border adapt-white adapt-text-grey">
-<li class="adapt-padding">Automotiva <span class="adapt-tag adapt-red adapt-margin-left">Em ascensão</span></li>
-<li class="adapt-padding">Aeronáutica <span class="adapt-tag adapt-red adapt-margin-left">Em ascensão</span></li>
-<li class="adapt-padding">Saúde <span class="adapt-tag adapt-red adapt-margin-left">Em ascensão</span></li>
-<li class="adapt-padding">Tecnologia <span class="adapt-tag adapt-red adapt-margin-left">Em ascensão</span></li>
+<li class="adapt-padding">Janeiro: Oficina de Impressão 3D</li>
+<li class="adapt-padding">Fevereiro: Feira de Projetos Maker</li>
+<li class="adapt-padding">Março: Hackathon de Inovação</li>
+<li class="adapt-padding">Abril: Apresentação de Projetos</li>
 </ul>
 </div>
+
+<!-- The SBC Section -->
+<!-- A Seção SBC -->
+<div class="adapt-black" id="sbc">
+  <div class="adapt-container adapt-content adapt-padding-64" style="max-width:800px">
+    <h2 class="adapt-wide adapt-center">Single Board Computers (SBC)</h2>
+    <p class="adapt-opacity adapt-center"><i>Descubra as possibilidades dos SBCs!</i></p><br>
+
+    <ul class="adapt-ul adapt-border adapt-white adapt-text-grey">
+      <li class="adapt-padding">Raspberry Pi <span class="adapt-tag adapt-green adapt-margin-left">Popular</span></li>
+      <li class="adapt-padding">Arduino <span class="adapt-tag adapt-green adapt-margin-left">Versátil</span></li>
+      <li class="adapt-padding">BeagleBone <span class="adapt-tag adapt-green adapt-margin-left">Inovador</span></li>
+    </ul>
+
+    <div class="adapt-row-padding adapt-padding-32" style="margin:0 -16px">
+      <div class="adapt-third adapt-margin-bottom">
+        <img src="/adaptimages/raspberrypi.jpg" alt="Raspberry Pi" style="width:100%" class="adapt-hover-opacity">
+        <div class="adapt-container adapt-white">
+          <p><b>Raspberry Pi</b></p>
+          <p class="adapt-opacity">Um mini computador acessível e poderoso.</p>
+          <button class="adapt-button adapt-black adapt-margin-bottom" onclick="document.getElementById('learnMoreModal').style.display='block'">Saiba Mais</button>
+        </div>
+      </div>
+      <div class="adapt-third adapt-margin-bottom">
+        <img src="/adaptimages/arduino.jpg" alt="Arduino" style="width:100%" class="adapt-hover-opacity">
+        <div class="adapt-container adapt-white">
+          <p><b>Arduino</b></p>
+          <p class="adapt-opacity">Plataforma ideal para projetos de eletrônica.</p>
+          <button class="adapt-button adapt-black adapt-margin-bottom" onclick="document.getElementById('learnMoreModal').style.display='block'">Saiba Mais</button>
+        </div>
+      </div>
+      <div class="adapt-third adapt-margin-bottom">
+        <img src="/adaptimages/beaglebone.jpg" alt="BeagleBone" style="width:100%" class="adapt-hover-opacity">
+        <div class="adapt-container adapt-white">
+          <p><b>BeagleBone</b></p>
+          <p class="adapt-opacity">Perfeito para aplicações de robótica e IoT.</p>
+          <button class="adapt-button adapt-black adapt-margin-bottom" onclick="document.getElementById('learnMoreModal').style.display='block'">Saiba Mais</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- Contact Section -->
+<!-- A Seção de Contato -->
 <div class="adapt-container adapt-content adapt-padding-64" style="max-width:800px" id="contato">
 <h2 class="adapt-wide adapt-center">CONTATO</h2>
-<p class="adapt-opacity adapt-center"><i>Gostou da Cultura Maker? Entre em contato!</i></p>
+<p class="adapt-opacity adapt-center"><i>Tem alguma dúvida? Entre em contato!</i></p>
 <div class="adapt-row adapt-padding-32">
 <div class="adapt-col m6 adapt-large adapt-margin-bottom">
 <i class="fa fa-map-marker" style="width:30px"></i> São Paulo, BR<br>
 <i class="fa fa-phone" style="width:30px"></i> Telefone: +55 11 99999-9999<br>
-<i class="fa fa-envelope" style="width:30px"></i> Email: contato@culturamaker.com<br>
+<i class="fa fa-envelope" style="width:30px"> </i> Email: contato@culturamaker40.com
 </div>
 <div class="adapt-col m6">
 <form action="/action_page.php" target="_blank">
 <div class="adapt-row-padding" style="margin:0 -16px 8px -16px">
 <div class="adapt-half">
-<input class="adapt-input adapt-border" type="text" placeholder="Nome" required name="Nome">
+<input class="adapt-input adapt-border" type="text" placeholder="Nome" required name="Name">
 </div>
 <div class="adapt-half">
 <input class="adapt-input adapt-border" type="text" placeholder="Email" required name="Email">
 </div>
 </div>
-<input class="adapt-input adapt-border" type="text" placeholder="Mensagem" required name="Mensagem">
+<input class="adapt-input adapt-border" type="text" placeholder="Mensagem" required name="Message">
 <button class="adapt-button adapt-black adapt-section adapt-right" type="submit">ENVIAR</button>
 </form>
 </div>
 </div>
 </div>
 
-<!-- Footer -->
-<footer class="adapt-container adapt-padding-64 adapt-center adapt-opacity adapt-light-grey adapt-xlarge">
-<i class="fa fa-facebook-official adapt-hover-opacity"></i>
-<i class="fa fa-instagram adapt-hover-opacity"></i>
-<i class="fa fa-twitter adapt-hover-opacity"></i>
-<p class="adapt-medium">Powered by <a href="https://www.adaptschools.com/adaptcss/default.asp" target="_blank">adapt.css</a></p>
-</footer>
-
-<script>
-// Automatic Slideshow - change image every 4 seconds
-var myIndex = 0;
-carousel();
-
-function carousel() {
-var i;
-var x = document.getElementsByClassName("mySlides");
-for (i = 0; i < x.length; i++) { x[i].style.display = "none"; }
-myIndex++;
-if (myIndex > x.length) { myIndex = 1; }
-x[myIndex - 1].style.display = "block";
-setTimeout(carousel, 4000);
-}
-</script>
+</div>
 
 </body>
 </html>
