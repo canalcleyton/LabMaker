@@ -1,0 +1,102 @@
+<!DOCTYPE html []>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="Cleyton Pereira dos Santos" content="MarkdownViewer++" />
+    <title>Bibliotecas do Arduino</title>
+    <style type="text/css">
+            
+/* Avoid page breaks inside the most common attributes, especially for exports (i.e. PDF) */
+td, h1, h2, h3, h4, h5, p, ul, ol, li {
+    page-break-inside: avoid; 
+}
+
+        </style>
+  </head>
+  <body>
+    <p>Instalação das Bibliotecas do Arduino</p>
+    <p>Passo 1: Abrir o Arduino IDE</p>
+    <ol>
+      <li>Inicie o Arduino IDE no seu computador.</li>
+    </ol>
+    <p>Passo 2: Acessar o Gerenciador de Bibliotecas</p>
+    <ol>
+      <li>
+        <p>No menu superior, clique em Sketch.</p>
+      </li>
+      <li>
+        <p>Selecione Include Library.</p>
+      </li>
+      <li>
+        <p>Clique em Manage Libraries.... Isso abrirá a janela do Gerenciador de Bibliotecas.</p>
+      </li>
+    </ol>
+    <p>Passo 3: Instalar a Biblioteca DHT</p>
+    <ol>
+      <li>
+        <p>Na barra de pesquisa do Gerenciador de Bibliotecas, digite "DHT sensor library".</p>
+      </li>
+      <li>
+        <p>Procure a biblioteca desenvolvida por Adafruit na lista encontrada.</p>
+      </li>
+      <li>
+        <p>Clique no botão Install ao lado da biblioteca para instalá-la.</p>
+      </li>
+    </ol>
+    <p>Passo 4: Instalar a Biblioteca PubSubClient</p>
+    <ol>
+      <li>
+        <p>Na mesma barra de pesquisa do Gerenciador de Bibliotecas, digite "PubSubClient".</p>
+      </li>
+      <li>
+        <p>Procure pela biblioteca PubSubClient na lista (desenvolvida por Nick O’Leary).</p>
+      </li>
+      <li>
+        <p>Clique no botão Install para instalá-la.</p>
+      </li>
+    </ol>
+    <p>Passo 5: Instalar a Biblioteca WiFi (para ESP8266/ESP32)</p>
+    <ol>
+      <li>
+        <p>Se você estiver usando um módulo ESP8266 ou ESP32, a biblioteca WiFi já deve estar incluída automaticamente.</p>
+      </li>
+      <li>
+        <p>Para ter certeza de que sua placa está configurada corretamente:</p>
+      </li>
+    </ol>
+    <ul>
+      <li>Vá em Tools &gt; Board e selecione a board correspondente ao seu módulo (por exemplo, NodeMCU 1.0 (ESP-12E Module) ou ESP32 Dev Module).</li>
+    </ul>
+    <ol>
+      <li>Verifique se a biblioteca WiFi está disponível ao tentar compilar um código que a utilize; ela deve ser reconhecida automaticamente.</li>
+    </ol>
+    <p>Passo 6: Verificar a Instalação</p>
+    <ol>
+      <li>Após a instalação de todas as bibliotecas, você pode verificar se estão instaladas corretamente:</li>
+    </ol>
+    <ul>
+      <li>Vá em Sketch &gt; Include Library e veja se as bibliotecas DHT e PubSubClient estão listadas.</li>
+    </ul>
+    <p>Passo 7: Testar a Biblioteca</p>
+    <ol>
+      <li>Para garantir que tudo foi instalado corretamente, crie um novo sketch (arquivo) e adicione as inclusões das bibliotecas:</li>
+    </ol>
+    <p>#include &lt;DHT.h&gt;
+#include &lt;PubSubClient.h&gt;
+#include &lt;WiFi.h&gt; // ou #include &lt;ESP8266WiFi.h&gt; se estiver usando ESP8266</p>
+    <ol>
+      <li>Compile o código (clique no botão de verificar ou pressione Ctrl + R).</li>
+    </ol>
+    <p>Se não houver erros, suas bibliotecas estão instaladas e prontas para uso!</p>
+    <p>Dicas Adicionais:</p>
+    <ul>
+      <li>
+        <p>Sempre mantenha seu Arduino IDE atualizado para garantir a compatibilidade com as bibliotecas.</p>
+      </li>
+      <li>
+        <p>Consulte o site oficial das bibliotecas se precisar de documentação ou exemplos adicionais.</p>
+      </li>
+    </ul>
+    <p>Se você tiver alguma dúvida em qualquer uma das etapas, fique à vontade para perguntar!</p>
+  </body>
+</html>
