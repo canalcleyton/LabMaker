@@ -1,0 +1,124 @@
+<!DOCTYPE html []>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="Cleyton Pereira dos Santos" content="MarkdownViewer++" />
+    <title>Instala&ccedil;&atilde;o do Python</title>
+    <style type="text/css">
+            
+/* Avoid page breaks inside the most common attributes, especially for exports (i.e. PDF) */
+td, h1, h2, h3, h4, h5, p, ul, ol, li {
+    page-break-inside: avoid; 
+}
+
+        </style>
+  </head>
+  <body>
+    <h2 id="instalacao-do-python-e-bibliotecas">Instalação do Python e Bibliotecas</h2>
+    <p>Aqui está um roteiro passo a passo para instalar o Python e as bibliotecas necessárias (<code>pyserial</code> e <code>paho-mqtt</code>) em um sistema Windows:</p>
+    <h3 id="instalar-o-python">1. Instalar o Python</h3>
+    <ol>
+      <li>
+        <p>
+          <strong>Baixar o Instalador</strong>:</p>
+        <ul>
+          <li>Acesse <a href="https://www.python.org/downloads/">python.org</a>.</li>
+          <li>Clique em "Download Python" (certifique-se de baixar a versão mais recente).</li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          <strong>Executar o Instalador</strong>:</p>
+        <ul>
+          <li>Abra o arquivo <code>.exe</code> baixado.</li>
+          <li>Marque a opção "Add Python to PATH" no início da instalação.</li>
+          <li>Clique em "Install Now" e siga as instruções na tela.</li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          <strong>Verificar a Instalação</strong>:</p>
+        <ul>
+          <li>Abra o Prompt de Comando (cmd).</li>
+          <li>Digite o seguinte comando para verificar a instalação:
+<pre><code class="language-bash">python --version
+</code></pre></li>
+        </ul>
+      </li>
+    </ol>
+    <h3 id="instalar-as-bibliotecas-necessarias">2. Instalar as Bibliotecas Necessárias</h3>
+    <ol>
+      <li>
+        <p>
+          <strong>Abrir o Prompt de Comando</strong>:</p>
+        <ul>
+          <li>Pressione <code>Win + R</code>, digite <code>cmd</code>, e pressione <code>Enter</code>.</li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          <strong>Instalar <code>pyserial</code></strong>:</p>
+        <ul>
+          <li>No Prompt de Comando, digite:
+<pre><code class="language-bash">pip install pyserial
+</code></pre></li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          <strong>Instalar <code>paho-mqtt</code></strong>:</p>
+        <ul>
+          <li>Após instalar o <code>pyserial</code>, digite:
+<pre><code class="language-bash">pip install paho-mqtt
+</code></pre></li>
+        </ul>
+      </li>
+    </ol>
+    <h3 id="verificar-as-instalacoes-das-bibliotecas">3. Verificar as Instalações das Bibliotecas</h3>
+    <p>Para verificar se as bibliotecas foram instaladas corretamente, você pode abrir um interpretador Python:</p>
+    <ol>
+      <li>
+        <p>No Prompt de Comando, digite:</p>
+        <pre>
+          <code class="language-bash">python
+</code>
+        </pre>
+      </li>
+      <li>
+        <p>Tente importar as bibliotecas:</p>
+        <pre>
+          <code class="language-python">import serial
+import paho.mqtt.client as mqtt
+</code>
+        </pre>
+      </li>
+    </ol>
+    <p>Se não houver mensagens de erro, as bibliotecas foram instaladas com sucesso.</p>
+    <h3 id="criar-um-script-de-teste-opcional">4. Criar um Script de Teste (Opcional)</h3>
+    <p>Para garantir que tudo está funcionando, você pode criar um simples script Python:</p>
+    <ol>
+      <li>
+        <p>Abra um editor de texto e cole o seguinte código:</p>
+        <pre>
+          <code class="language-python">import serial
+import paho.mqtt.client as mqtt
+import time
+
+print("Bibliotecas importadas com sucesso!")
+</code>
+        </pre>
+      </li>
+      <li>
+        <p>Salve o arquivo como <code>test_script.py</code>.</p>
+      </li>
+      <li>
+        <p>No Prompt de Comando, navegue até o diretório onde você salvou o arquivo e execute:</p>
+        <pre>
+          <code class="language-bash">python test_script.py
+</code>
+        </pre>
+      </li>
+    </ol>
+    <p>Se você vir a mensagem "Bibliotecas importadas com sucesso!", tudo está funcionando corretamente!</p>
+  </body>
+</html>
