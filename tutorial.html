@@ -848,9 +848,12 @@ O Node-RED conecta dispositivos de hardware através de:</p>
     </p>
     <ol>
       <li>
-        <p>Instale o Node.js e o Node-RED:<br />
-<code><pre>sudo apt install nodejs npm -y</code></pre><br />
-<code><pre>sudo npm install -g --unsafe-perm node-red</code></pre></p>
+        <p>Instale o Node.js e o Node-RED:</p>
+<code><pre>curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - </code></pre>
+<code><pre>sudo apt update</code></pre>
+<code><pre>sudo apt full-upgrade -y</code></pre>      
+<code><pre>sudo apt install nodejs npm -y</code></pre>
+<code><pre>sudo npm install -g --unsafe-perm node-red</code></pre>
       </li>
       <li>
         <p>Inicie o Node-RED:<br />
