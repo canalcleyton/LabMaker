@@ -349,7 +349,7 @@ Este laboratório, com seus cinco componentes integrados, proporciona um ambient
     <ul>
       <li>Instalar Python e as bibliotecas necessárias:</li>
       <li>pip install pyserial paho-mqtt</li>
-      <li>oun</li>
+      <li>ou alternativamente para versões antigas do Python:</li>
       <li>pip install pyserial paho-mqtt json</li>
       <li>Configurar o broker MQTT:
 <ul><li>Instalar o Mosquitto (broker MQTT) no servidor ou usar um serviço na nuvem.</li><li>Definir o tópico MQTT para publicação dos dados.</li></ul></li>
@@ -649,6 +649,8 @@ void loop() {
           <li>Instalar biblioteca <strong>paho-mqtt</strong> para publicação dos dados no broker MQTT.</li>
           <li>Instalar biblioteca <strong>json</strong> para manipulação dos dados.</li>
         </ul>
+        <p>pip install pyserial paho-mqtt pyserial</p>
+        <p>Ou alternativamente, para versões antigas do Python:</p>
         <p>pip install pyserial paho-mqtt json pyserial</p>
       </li>
       <li>
