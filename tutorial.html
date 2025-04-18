@@ -348,9 +348,9 @@ Este laboratório, com seus cinco componentes integrados, proporciona um ambient
     </p>
     <ul>
       <li>Instalar Python e as bibliotecas necessárias:</li>
-      <li>pip install pyserial paho-mqtt</li>
+      <li><pre><code>pip install pyserial paho-mqtt</code></pre></li>
       <li>ou alternativamente para versões antigas do Python:</li>
-      <li>pip install pyserial paho-mqtt json</li>
+      <li><pre><code>pip install pyserial paho-mqtt json</code></pre></li>
       <li>Configurar o broker MQTT:
 <ul><li>Instalar o Mosquitto (broker MQTT) no servidor ou usar um serviço na nuvem.</li><li>Definir o tópico MQTT para publicação dos dados.</li></ul></li>
       <li>Criar e executar o script Python para receber os dados da porta serial e publicá-los no MQTT.</li>
@@ -649,13 +649,9 @@ void loop() {
           <li>Instalar biblioteca <strong>paho-mqtt</strong> para publicação dos dados no broker MQTT.</li>
           <li>Instalar biblioteca <strong>json</strong> para manipulação dos dados.</li>
         </ul>    
-        <pre>
-        <code>
-        pip install pyserial paho-mqtt pyserial
+        <pre><code>pip install pyserial paho-mqtt pyserial</code></pre>
         <p>Ou alternativamente, para versões antigas do Python:</p>
-        pip install pyserial paho-mqtt json pyserial
-        </code>
-        </pre>
+        <code><pre>pip install pyserial paho-mqtt json pyserial</code></pre>
         </li>
       <li>
         <p>Escrever o código da ponte Python MQTT (arquivo: pontemqtt.py):</p>
@@ -724,24 +720,24 @@ while True:
     <ol>
       <li>
         <p>Acesse o terminal do Proxmox e instale o Mosquitto:</p>
-        <p>apt update &amp;&amp; apt install mosquitto mosquitto-clients -y</p>
+        <p><code><pre>apt update &amp;&amp; apt install mosquitto mosquitto-clients -y</code></pre></p>
       </li>
       <li>
         <p>Inicie o Mosquitto:</p>
-        <p>systemctl start mosquitto</p>
+        <p><code><pre>systemctl start mosquitto</code></pre></p>
       </li>
       <li>
         <p>Edite o arquivo de configuração para permitir conexão externa:</p>
-        <p>nano /etc/mosquitto/mosquitto.conf</p>
+        <p><code><pre>nano /etc/mosquitto/mosquitto.conf</code></pre></p>
         <ul>
           <li>Adicione a linha:</li>
         </ul>
-        <p>listener 1883 0.0.0.0</p>
-        <p>allow_anonymous true</p>
+        <p><code><pre>listener 1883 0.0.0.0</code></pre></p>
+        <p><code><pre>allow_anonymous true</code></pre></p>
       </li>
       <li>
         <p>Reinicie o Mosquitto:</p>
-        <p>systemctl restart mosquitto</p>
+        <p><code><pre>systemctl restart mosquitto</code></pre></p>
       </li>
     </ol>
     <p>
@@ -778,8 +774,8 @@ O Node-RED conecta dispositivos de hardware através de:</p>
     <ol>
       <li>
         <p>Instale o Node.js e o Node-RED:<br />
-sudo apt install nodejs npm -y<br />
-sudo npm install -g --unsafe-perm node-red</p>
+<code><pre>sudo apt install nodejs npm -y</code></pre><br />
+<code><pre>sudo npm install -g --unsafe-perm node-red</code></pre></p>
       </li>
       <li>
         <p>Inicie o Node-RED:<br />
