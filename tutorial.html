@@ -781,14 +781,14 @@ O Node-RED conecta dispositivos de hardware através de:</p>
         <p>Inicie o Node-RED:<br />
 node-red</p>
         <ul>
-          <li>Acesse via navegador: http://172.31.64.117:1880</li>
+          <li>Acesse via navegador na nuvem: http://200.129.151.72:1880 ou local: http://172.31.64.117:1880</li>
         </ul>
       </li>
       <li>
         <p>Adicione um nó MQTT no fluxo:</p>
         <ul>
           <li>Configure o nó MQTT para:
-<ul><li>Server: 172.31.64.117 (ou o IP do WSL2, se necessário)</li><li>Port: 1880</li><li>Username e Password: (se você configurou autenticação – obs.: não para este  estudo de caso)</li></ul></li>
+<ul><li>Server na nuvem: http://200.129.151.72:1880/ ou local: 172.31.64.117 (ou o IP do WSL2, se necessário)</li><li>Port: 1880</li><li>Username e Password: (se você configurou autenticação – obs.: não para este  estudo de caso)</li></ul></li>
           <li>Teste o fluxo publicando e assinando tópicos relacionados ao DHT22 (como sensor/dht22).</li>
         </ul>
       </li>
@@ -797,6 +797,7 @@ node-red</p>
       </li>
     </ol>
     <p>netsh interface portproxy add v4tov4 listenport=1880 listenaddress=0.0.0.0 connectport=1880 connectaddress=172.31.64.117</p>
+    <p>Obs.: utilize o comando acima somente no Windows ao usar o WSL2 (Windows Subsystem for Linux)</p>
     <p>
       <strong>Instalação</strong>
     </p>
