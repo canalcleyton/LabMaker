@@ -713,7 +713,82 @@ while True:
     </ol>
     <p>
       <strong>11.2 Crie a VM/Container Ubuntu no Proxmox</strong>
-    </p>    
+    </p>   
+    <h3 id="roteiro-para-criacao-de-uma-vmcontainer-ubuntu-no-proxmox">Roteiro para Criação de uma VM/Container Ubuntu no Proxmox</h3>
+    <h4 id="acesso-ao-proxmox">1. Acesso ao Proxmox</h4>
+    <ul>
+      <li>
+        <strong>Passo 1:</strong> Abra o navegador e insira o endereço IP do seu servidor Proxmox para acessá-lo.</li>
+      <li>
+        <strong>Passo 2:</strong> Faça login com suas credenciais de administrador.</li>
+    </ul>
+    <h4 id="criacao-de-uma-nova-vmcontainer">2. Criação de uma Nova VM/Container</h4>
+    <ul>
+      <li>
+        <strong>Passo 3:</strong> No painel à esquerda, clique no nome do seu servidor Proxmox.</li>
+      <li>
+        <strong>Passo 4:</strong> Vá até a aba "Datacenter" e clique em "Create VM" (para VM) ou "Create CT" (para Container).</li>
+    </ul>
+    <h4 id="configuracao-da-vmcontainer">3. Configuração da VM/Container</h4>
+    <ul>
+      <li>
+        <p>
+          <strong>Passo 5:</strong> Preencha os detalhes básicos:</p>
+        <ul>
+          <li>
+            <strong>Node:</strong> Selecione o nó onde deseja criar a VM/Container.</li>
+          <li>
+            <strong>VM ID ou CT ID:</strong> Atribua um número único.</li>
+          <li>
+            <strong>Name:</strong> Dê um nome para a sua VM/Container (ex: "Ubuntu_Server").</li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          <strong>Passo 6:</strong> Escolha a imagem ISO ou template:</p>
+        <ul>
+          <li>Para uma VM, selecione o ISO do Ubuntu que você deseja usar (você deve ter feito o upload previamente para o Proxmox).</li>
+          <li>Para um Container, escolha um template de Ubuntu disponível na biblioteca.</li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          <strong>Passo 7:</strong> Configure a quantidade de recursos:</p>
+        <ul>
+          <li>
+            <strong>CPU:</strong> Defina a quantidade de núcleos de CPU.</li>
+          <li>
+            <strong>Memória RAM:</strong> Selecione o tamanho da memória.</li>
+        </ul>
+      </li>
+    </ul>
+    <h4 id="configuracao-de-disco">4. Configuração de Disco</h4>
+    <ul>
+      <li>
+        <strong>Passo 8:</strong> Configure o armazenamento do disco:
+<ul><li>Escolha onde você deseja armazenar a disk image da sua VM/Container.</li><li>Defina a quantidade de espaço em disco que você deseja alocar.</li></ul></li>
+    </ul>
+    <h4 id="configuracao-de-rede">5. Configuração de Rede</h4>
+    <ul>
+      <li>
+        <strong>Passo 9:</strong> Configure a rede:
+<ul><li>O default é o uso do bridge com a rede local (bridge) ou uma rede específica do seu ambiente Proxmox.</li><li>Certifique-se de que a opção "Use Network" está habilitada.</li></ul></li>
+    </ul>
+    <h4 id="revisao-e-criacao">6. Revisão e Criação</h4>
+    <ul>
+      <li>
+        <strong>Passo 10:</strong> Revise todas as configurações e clique em "Finish" para criar a VM/Container.</li>
+    </ul>
+    <h4 id="inicializacao-da-vmcontainer">7. Inicialização da VM/Container</h4>
+    <ul>
+      <li>
+        <strong>Passo 11:</strong> Após a criação, selecione a nova VM/Container no painel e clique em "Start" para inicializá-la.</li>
+    </ul>
+    <h4 id="acesso-a-consola">8. Acesso à Consola</h4>
+    <ul>
+      <li>
+        <strong>Passo 12:</strong> Clique em "Console" para acessar a interface de linha de comando do Ubuntu. Você precisará seguir as instruções de instalação do sistema operacional Ubuntu a partir desse ponto.</li>
+    </ul>    
     <p>
       <strong>11.3 Instalando o Mosquitto MQTT Broker na VM/Container Ubuntu</strong>
     </p>
