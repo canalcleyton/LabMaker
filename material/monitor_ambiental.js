@@ -1,67 +1,67 @@
 [
     {
-        "id": "a0b920b616cfd474",
+        "id": "1260593154d2b1e8",
         "type": "tab",
-        "label": "Fluxo 3",
+        "label": "Fluxo 1",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "mqtt-in",
+        "id": "aab0fb7a5453abb6",
         "type": "mqtt in",
-        "z": "a0b920b616cfd474",
+        "z": "1260593154d2b1e8",
         "name": "DHT22 Sensor",
-        "topic": "sensor/dht22",
+        "topic": "sensor/dht22/#",
         "qos": "0",
         "datatype": "json",
         "broker": "4503e5470c9a9357",
         "nl": false,
         "rap": false,
         "inputs": 0,
-        "x": 120,
-        "y": 220,
+        "x": 240,
+        "y": 280,
         "wires": [
             [
-                "process-node"
+                "60e053d3a20a6d91"
             ]
         ]
     },
     {
-        "id": "process-node",
+        "id": "60e053d3a20a6d91",
         "type": "function",
-        "z": "a0b920b616cfd474",
+        "z": "1260593154d2b1e8",
         "name": "Processar Dados",
-        "func": "const temp = msg.payload.temperatura;\nconst hum = msg.payload.umidade;\n\n// Validação de dados\nif (temp < -40 || temp > 80 || hum < 0 || hum > 100) {\nreturn null;\n}\n\n// Verificação de alertas\nlet status = \"normal\";\nif (temp > 30) status = \"alta_temperatura\";\nif (temp < 10) status = \"baixa_temperatura\";\nif (hum > 80) status = \"alta_umidade\";\nif (hum < 20) status = \"baixa_umidade\";\n\n// Preparar mensagens\nconst tempMsg = { payload: temp, topic: \"temperatura\" };\nconst humMsg = { payload: hum, topic: \"umidade\" };\nconst statusMsg = { payload: status, topic: \"status\" };\n\nreturn [tempMsg, humMsg, statusMsg];",
+        "func": "const temp = msg.payload.temperatura;\nconst hum = msg.payload.umidade;\nconst deviceId = msg.payload.id;\n\n// Validação de dados\nif (temp < -40 || temp > 80 || hum < 0 || hum > 100) {\n    return null;\n}\n\n// Verificação de alertas\nlet status = \"normal\";\nif (temp > 30) status = \"alta_temperatura\";\nif (temp < 10) status = \"baixa_temperatura\";\nif (hum > 80) status = \"alta_umidade\";\nif (hum < 20) status = \"baixa_umidade\";\n\n// Preparar mensagens\nconst tempMsg = { payload: temp, topic: `temperatura/${deviceId}` };\nconst humMsg = { payload: hum, topic: `umidade/${deviceId}` };\nconst statusMsg = { payload: status, topic: `status/${deviceId}` };\n\nreturn [tempMsg, humMsg, statusMsg];",
         "outputs": 3,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 230,
-        "y": 120,
+        "x": 350,
+        "y": 180,
         "wires": [
             [
-                "chart-temp",
-                "ceb6f96acc930456"
+                "49bd41133125a0e8",
+                "a46654419336cf4d"
             ],
             [
-                "chart-hum"
+                "42d3042b901c4d03"
             ],
             [
-                "alert-node"
+                "c1bacb45aecc7530"
             ]
         ]
     },
     {
-        "id": "chart-temp",
+        "id": "49bd41133125a0e8",
         "type": "ui-chart",
-        "z": "a0b920b616cfd474",
+        "z": "1260593154d2b1e8",
         "group": "6dc24590df83cb2f",
         "name": "Temperatura",
         "label": "Temperatura (°C)",
-        "order": 1,
+        "order": 2,
         "chartType": "line",
         "category": "temp",
         "categoryType": "msg",
@@ -107,20 +107,20 @@
         "height": "6",
         "className": "",
         "interpolation": "linear",
-        "x": 530,
-        "y": 120,
+        "x": 650,
+        "y": 180,
         "wires": [
             []
         ]
     },
     {
-        "id": "chart-hum",
+        "id": "42d3042b901c4d03",
         "type": "ui-chart",
-        "z": "a0b920b616cfd474",
+        "z": "1260593154d2b1e8",
         "group": "6dc24590df83cb2f",
         "name": "Umidade",
         "label": "Umidade (%)",
-        "order": 2,
+        "order": 3,
         "chartType": "line",
         "category": "hum",
         "categoryType": "msg",
@@ -166,16 +166,16 @@
         "height": "6",
         "className": "",
         "interpolation": "linear",
-        "x": 500,
-        "y": 180,
+        "x": 620,
+        "y": 240,
         "wires": [
             []
         ]
     },
     {
-        "id": "alert-node",
+        "id": "c1bacb45aecc7530",
         "type": "switch",
-        "z": "a0b920b616cfd474",
+        "z": "1260593154d2b1e8",
         "name": "Verificar Alertas",
         "property": "status",
         "propertyType": "msg",
@@ -188,18 +188,18 @@
         ],
         "repair": false,
         "outputs": 1,
-        "x": 340,
-        "y": 300,
+        "x": 460,
+        "y": 360,
         "wires": [
             [
-                "notification"
+                "d1df500fb024069c"
             ]
         ]
     },
     {
-        "id": "notification",
+        "id": "d1df500fb024069c",
         "type": "ui-notification",
-        "z": "a0b920b616cfd474",
+        "z": "1260593154d2b1e8",
         "ui": "4344ffad474cf9f4",
         "colorDefault": false,
         "color": "#000000",
@@ -213,19 +213,19 @@
         "raw": false,
         "className": "",
         "name": "Alerta",
-        "x": 510,
-        "y": 280,
+        "x": 630,
+        "y": 340,
         "wires": [
             []
         ]
     },
     {
-        "id": "ceb6f96acc930456",
+        "id": "a46654419336cf4d",
         "type": "ui-gauge",
-        "z": "a0b920b616cfd474",
+        "z": "1260593154d2b1e8",
         "name": "Medidor de Temperatura",
         "group": "1ccc457a33169364",
-        "order": 1,
+        "order": 2,
         "width": 3,
         "height": 3,
         "gtype": "gauge-34",
@@ -257,8 +257,8 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 490,
-        "y": 60,
+        "x": 610,
+        "y": 120,
         "wires": []
     },
     {
