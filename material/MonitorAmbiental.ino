@@ -17,6 +17,9 @@ const unsigned long READ_INTERVAL = 7000; // Intervalo de leitura (7s)
 // Variáveis para controle de tempo
 unsigned long lastReadTime = 0;
 
+// Identificador único do dispositivo
+const char* deviceId = "esp01"; // Altere para um ID único para cada ESP
+
 // Função para inicializar o sistema
 void setup() {
     // Inicializa a comunicação serial padrão para depuração (opcional)
@@ -48,6 +51,7 @@ void readAndSendData() {
 
     // Cria um documento JSON usando ArduinoJson
     StaticJsonDocument<200> doc;
+    doc["id"] = deviceId; // Adiciona o ID do dispositivo
     doc["temperatura"] = t;
     doc["umidade"] = h;
 
